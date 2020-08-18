@@ -1,8 +1,5 @@
-<a href="/Shelters">Shelters Index</a>
+<a href="/shelters">Shelters List</a>
 
-<h1><%= @shelter.name %></h1>
-
-<p><%= @shelter.address %></p>
-<p><%= @shelter.city %></p>
-<p><%= @shelter.state %></p>
-<p><%= @shelter.zip %></p>
+<ul><h3><%= @shelter.name %></h3></ul>
+<ul><%= @shelter.address %>, <%= @shelter.city %> </ul>
+<ul><%= @shelter.state %>, <%= @shelter.zip %></ul>
