@@ -29,7 +29,7 @@ class SheltersController < ApplicationController
 
   def update
     shelter = Shelter.find(params[:id])
-    task.update({
+    shelter.update({
       name:params[:shelter][:name],
       address:params[:shelter][:address],
       city:params[:shelter][:city],
