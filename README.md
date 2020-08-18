@@ -136,7 +136,7 @@ Then I see the shelter with that id including the shelter's:
 ```
 
 ```
-- [] done
+- [x] done
 
 User Story 4, Shelter Creation
 
