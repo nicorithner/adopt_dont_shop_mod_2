@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-Rspec.describe Shelter, type: model do
-  describe Artist, type: :model do
+RSpec.describe Shelter, type: :model do
+  describe Shelter, type: :model do
     
     describe "validations" do
       it { should validate_presence_of :name }
