@@ -1,16 +1,3 @@
-# User Story 4, Shelter Creation
-
-# As a visitor
-  # When I visit the Shelter Index page
-        # Then I see a link to create a new Shelter, "New Shelter"
-  # When I click this link
-        # Then I am taken to '/shelters/new' 
-        # where I  see a form for a new shelter
-
-  # When I fill out the form with a new shelter's info And I click the button "Create Shelter" to submit the form
-        # a new shelter is created,
-        # and I am redirected to the Shelter Index page where I see the new Shelter listed.
-
 require "rails_helper"
 
 RSpec.describe "Shelter Creation" do
@@ -25,6 +12,20 @@ RSpec.describe "Shelter Creation" do
     click_on "New Shelter"
 
     expect(current_path).to eq('/shelters/new')
+  end
+
+  it "In Shelter New page after filling out the form and submitting new shelter's info routes to Shelter Index" do
+    visit '/shelters/new'
+
+    fill_in 'shelter[name]', with: "New Shelter"
+    fill_in 'shelter[address]', with: "123 street"
+    fill_in 'shelter[city]', with: "Denver"
+    fill_in 'shelter[state]', with: "CO"
+    fill_in 'shelter[zip]', with: 80202
+    click_on "Create Shelter"
+
+    expect(current_path).to eq('/shelters')
+    expect(page).to have_content("New Shelter")
   end
   
 end
