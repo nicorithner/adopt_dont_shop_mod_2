@@ -265,7 +265,9 @@
       "/Users/nicomacbook/turing/2module/adopt_dont_shop_mod_2/app/models/shelter.rb": {
         "lines": [
           1,
+          1,
           null,
+          1,
           null
         ]
       },
@@ -277,6 +279,6 @@
         ]
       }
     },
-    "timestamp": 1597848277
+    "timestamp": 1597849327
   }
 }
