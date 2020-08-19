@@ -1,4 +1,7 @@
 <h1>Shelters</h1>
+<form action="/shelters/new">
+    <input type="submit" value="New Shelter" />
+</form>
 
 <% @shelters.each do |shelter| %>
   <ul> <li><h3><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h3></li></ul>
