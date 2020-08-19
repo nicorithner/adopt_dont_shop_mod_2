@@ -1,13 +1,3 @@
-              #where I  see a form to edit the shelter's data including:
-                                                                        # - name
-                                                                        # - address
-                                                                        # - city
-                                                                        # - state
-                                                                        # - zip
-                  # And I click the button to submit the form the shelter's info is updated,
-                        # and I am redirected to the Shelter's Show page 
-                                  #where I see the shelter's updated info
-
 require "rails_helper"
 
 RSpec.describe "Shelter Update" do
