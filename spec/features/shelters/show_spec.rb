@@ -9,7 +9,6 @@ RSpec.describe "shelter show page" do
  
   it "I see the shelter with that id including the shelter's information" do
     visit "/shelters/#{@shelter_1.id}"
-binding.pry
     expect(page).to have_content(@shelter_1.name)
     expect(page).to have_content(@shelter_1.address)
     expect(page).to have_content(@shelter_1.city)
