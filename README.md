@@ -213,8 +213,10 @@ Then I see each Pet in the system including the Pet's:
 - name of the shelter where the pet is currently located
 ```
 <!-- rails g migration CreatePets image:string name:string age:integer sex:string -->
+
+<!-- expect(page).to have_xpath("//img['brown_puppy.jpg']") -->
 ```
-- [] done
+- [x] done
 
 User Story 8, Shelter Pets Index
 
