@@ -23,7 +23,17 @@ RSpec.describe "shelter's pets index page" do
     @pet_4 = Pet.create!(image: "cat.jpg", name: "Kitten1", age: 2, sex: "Male", shelter_id: @shelter_2.id)
   end
 
-  it "" do
+  it "Can see each available pet for the specified by id shelter" do
+    
+    visit "/shelters/#{shelter_1.id}/pets"
+
+    expect(page).to have_xpath("//img['brown_puppy.jpg']")
+    expect(page).to have_content(@pet_1.name)
+    expect(page).to have_content(@pet_1.age)
+    expect(page).to have_content(@pet_1.sex)
+    expect(page).to have_content(@pet_1.shelter.name)
+
+    expect(page).to_not have_content(@pet_3.name)
   end
 
 end
