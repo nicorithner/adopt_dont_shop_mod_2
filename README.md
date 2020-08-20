@@ -212,7 +212,7 @@ Then I see each Pet in the system including the Pet's:
 - sex
 - name of the shelter where the pet is currently located
 ```
-<!-- rails g migration CreatePets image_url:string name:string age:integer sex:string shelter:string-->
+<!-- rails g migration CreatePets image:string name:string age:integer sex:string shelter:string-->
 ```
 - [] done
 
