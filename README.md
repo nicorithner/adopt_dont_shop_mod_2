@@ -199,7 +199,7 @@ and I am redirected to the shelter index page where I no longer see this shelter
 Pets can be adopted from the Shelter. Pets belong to a shelter.
 
 ```
-- [] done
+- [x] done
 
 User Story 7, Pet Index
 
