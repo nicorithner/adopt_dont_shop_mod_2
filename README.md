@@ -216,7 +216,7 @@ Then I see each Pet in the system including the Pet's:
 
 <!-- expect(page).to have_xpath("//img['brown_puppy.jpg']") -->
 ```
-- [] done
+- [x] done
 
 User Story 8, Shelter Pets Index
 
