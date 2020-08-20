@@ -3,6 +3,12 @@
 <ul><h3><%= @shelter.name %></h3></ul>
 <ul><%= @shelter.address %>, <%= @shelter.city %> </ul>
 <ul><%= @shelter.state %>, <%= @shelter.zip %></ul>
+
+<ul><form action="/pets">
+    <input type="submit" value="Pets" />
+</form></ul>
+
+
 <ul><a href="/shelters/<%= @shelter.id %>/edit">Update Shelter</a></ul>
 
 <ul><form action="/shelters/<%= @shelter.id %>" method="POST">
