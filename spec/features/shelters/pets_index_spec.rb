@@ -25,7 +25,7 @@ RSpec.describe "shelter's pets index page" do
 
   it "Can see each available pet for the specified by id shelter" do
     
-    visit "/shelters/#{shelter_1.id}/pets"
+    visit "/shelters/#{@shelter_1.id}/pets"
 
     expect(page).to have_xpath("//img['brown_puppy.jpg']")
     expect(page).to have_content(@pet_1.name)

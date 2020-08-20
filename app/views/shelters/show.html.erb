@@ -4,7 +4,7 @@
 <ul><%= @shelter.address %>, <%= @shelter.city %> </ul>
 <ul><%= @shelter.state %>, <%= @shelter.zip %></ul>
 
-<ul><form action="/pets">
+<ul><form action=":shelter_id/pets">
     <input type="submit" value="Pets" />
 </form></ul>
 
