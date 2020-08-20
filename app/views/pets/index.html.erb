@@ -1,5 +1,11 @@
 <h1>Available Pets</h1>
 
 <% @pets.each do |pet| %>
-  <h3><%= pet %></h3>
+
+  <h3><%= pet.name %></h3>
+  <ul><%= image_tag("#{pet.image}") %> </ul>
+  <ul>Age: <%= pet.age %></ul>
+  <ul>Sex: <%= pet.sex %></ul>
+  <ul>Shelter: <%= pet.shelter.name %></ul>
 <% end %>
+
