@@ -311,6 +311,18 @@ Then a `PATCH` request is sent to '/pets/:id',
 the pet's data is updated,
 and I am redirected to the Pet Show page where I see the Pet's updated information
 ```
+- [ ] test 
+  When visiting the pet show page
+  - [x] Can see link "Update Pet" to update that pet
+  - [ ] "Update Pet" links leads to '/pets/:id/edit'
+  - [ ] at edit page, can edit pet's info (but status)
+  - [ ] Clicking "Update Pet" sends `PATCH` request is sent to '/pets/:id'
+  - [ ] Gets redirected to Pet show page and the updated info is there.
+
+- [ ] view
+- [ ] action
+- [ ] route
+
 
 ```
 - [] done
