@@ -1,22 +1,3 @@
-# User Story 9, Pet Show
-
-# As a visitor
-# When I visit '/pets/:id'
-#       Then I see the pet with that id including the pet's:
-                    # - image
-                    # - name
-                    # - description
-                    # - approximate age
-                    # - sex
-                    # - adoptable/pending adoption status
-
-                    #[ ] test
-                    #[ ] view
-                    #[ ] action
-                    #[ ] route
-                    #[ ] Add status column to data base. adoptable/pending adoption status
-                    #[ ] Add description column to data base
-
 require 'rails_helper'
 
 RSpec.describe "pets index page" do
@@ -41,7 +22,5 @@ RSpec.describe "pets index page" do
     expect(page).to have_content(@pet_1.sex)
     expect(page).to have_content("#{@pet_1.status}")
     expect(page).to have_content("#{@pet_1.description}")
-    
-    expect(page).to have_content("#{@pet_2.status}")
   end
   end

@@ -1,0 +1,9 @@
+<a href="/pets">Back to pets index</a>
+
+<h3><%= @pet.name %></h3>
+<ul><%= image_tag(@pet.image, alt: @pet.name, class: "pet-index-image") %> </ul> 
+<ul>Age: <%= @pet.age %></ul>
+<ul>Sex: <%= @pet.sex %></ul>
+<ul>Sex: <%= @pet.status %></ul>
+<ul>Shelter: <%= @pet.shelter.name %></ul>
+<ul>Sex: <%= @pet.description %></ul>
