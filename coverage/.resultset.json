@@ -253,12 +253,45 @@
           null,
           1,
           1,
+          1,
+          null,
           null
         ]
       },
       "/Users/nicomacbook/turing/2module/adopt_dont_shop_mod_2/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/nicomacbook/turing/2module/adopt_dont_shop_mod_2/spec/features/pets/show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -348,17 +381,6 @@
       },
       "/Users/nicomacbook/turing/2module/adopt_dont_shop_mod_2/spec/features/shelters/pets_index_spec.rb": {
         "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           1,
           null,
           1,
@@ -515,6 +537,10 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -583,6 +609,6 @@
         ]
       }
     },
-    "timestamp": 1597961886
+    "timestamp": 1597970034
   }
 }

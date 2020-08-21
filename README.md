@@ -230,7 +230,7 @@ Then I see each Pet that can be adopted from that Shelter with that shelter_id i
 ```
 
 ```
-- [] done
+- [x] done
 
 User Story 9, Pet Show
 
@@ -243,7 +243,18 @@ Then I see the pet with that id including the pet's:
 - approximate age
 - sex
 - adoptable/pending adoption status
+
+  - [x] test
+  - [x] view
+  - [x] action
+  - [x] route
+  - [x] Add status column to data base. adoptable/pending adoption status
+  - [x] Add description column to data base
 ```
+<!--rails generate migration add_status_to_pets status:string-->
+<!--rails db:migrate-->
+<!--rails generate migration add_description_to_pets description:text-->
+<!--rails db:migrate-->
 
 ```
 - [] done
