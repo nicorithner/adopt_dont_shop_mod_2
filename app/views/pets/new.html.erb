@@ -1,0 +1,24 @@
+<form action="/shelters/:shelter_id/pets" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name='pet[status]' value= "Available"><br/>
+
+  <p>Create a New Pet:</p>
+
+  <label for="image">Image:</label><br>
+  <input type='text' name='pet[image]'><br/>
+
+  <label for="name">Name:</label><br>
+  <input type='text' name='pet[name]'><br/>
+
+  <label for="age">Age:</label><br>
+  <input type='text' name='pet[age]'><br/>
+
+  <label for="sex">Sex:</label><br>
+  <input type='text' name='pet[sex]'><br/>
+
+  <label for="description">Description:</label><br>
+  <textarea rows = "5" cols = "30" name = 'pet[description]'></textarea><br/>
+
+ 
+  <p> <input type='submit' value="Create pet"/> </p>
+</form>

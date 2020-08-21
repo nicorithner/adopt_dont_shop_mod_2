@@ -279,15 +279,16 @@ that pet has a status of 'adoptable',
 and I am redirected to the Shelter Pets Index page where I can see the new pet listed
 
   - [x] test set up
-  - [] link from Shelter's Pets index
+  - [x] link from Shelter's Pets index
+    - [x] '/shelters/:shelter_id/pets/new'
+  - [] route
+    - [x] GET to routes form
+    - [] POST
   - [] view
     - [] form (with 'adoptable' as default status)
     - [] 'Create Pet' button
       - [] button redirects to Shelter Pets Index page
   - [] action
-  - [] route
-    - [] POST
-    - [] '/shelters/:shelter_id/pets/new'
 ```
 
 ```
