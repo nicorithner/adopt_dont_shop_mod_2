@@ -285,10 +285,10 @@ and I am redirected to the Shelter Pets Index page where I can see the new pet l
     - [x] GET to routes form
     - [] POST
   - [] view
-    - [] form (with 'adoptable' as default status)
+    - [x] form (with 'adoptable' as default status)
     - [] 'Create Pet' button
       - [] button redirects to Shelter Pets Index page
-  - [] action
+  - [x] action
 ```
 
 ```
