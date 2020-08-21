@@ -244,6 +244,10 @@ Then I see the pet with that id including the pet's:
 - sex
 - adoptable/pending adoption status
 ```
+<!--rails generate migration add_status_to_pets status:string-->
+<!--rails db:migrate-->
+<!--rails generate migration add_description_to_pets description:text-->
+<!--rails db:migrate-->
 
 ```
 - [] done
