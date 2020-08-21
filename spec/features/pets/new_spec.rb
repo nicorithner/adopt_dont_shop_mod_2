@@ -13,7 +13,28 @@ RSpec.describe "pets index page" do
   end
 
 
-  it "" do
+  it "From Shelter Pets Index. 'Create Pet' link routes to '/shelters/:shelter_id/pets/new'" do
+    visit "/shelters/#{@shelter_1.id}"
+    click_on "Create Pet"
+
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
+  end
+
+  it "Can create a new adoptable pet and see it in shelter's index page" do
+    visit "/shelters/#{@shelter_1.id}/pets/new"
+
+    fill_in 'pet[image]', with: "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_960_720.jpg"
+    fill_in 'pet[name]', with: "Snowy"
+    fill_in 'pet[description]', with: "Fun and loving, high energy puppy"
+    fill_in 'pet[age]', with: 1
+    fill_in 'pet[sex]', with: "Female"
+
+    click_on "Create Pet"
+
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
+
+    expect(page).to have_content("Snowy")
+    expect(page).to have_content("Adoptable")
   end
 
 end

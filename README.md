@@ -278,7 +278,7 @@ a new pet is created for that shelter,
 that pet has a status of 'adoptable',
 and I am redirected to the Shelter Pets Index page where I can see the new pet listed
 
-  - [] test set up
+  - [x] test set up
   - [] link from Shelter's Pets index
   - [] view
     - [] form (with 'adoptable' as default status)
