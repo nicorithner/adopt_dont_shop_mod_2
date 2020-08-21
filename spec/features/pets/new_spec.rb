@@ -15,8 +15,9 @@ RSpec.describe "pets index page" do
 
   it "From Shelter Pets Index. 'Create Pet' link routes to '/shelters/:shelter_id/pets/new'" do
     visit "/shelters/#{@shelter_1.id}/pets"
-    click_on "Create Pet"
+    expect(page).to have_selector(:link_or_button, 'Create Pet')
 
+    click_on "Create Pet"
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
   end
 

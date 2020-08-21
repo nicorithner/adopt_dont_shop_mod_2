@@ -1,24 +1,15 @@
-<form action="/shelters/:shelter_id/pets" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name='pet[status]' value= "Available"><br/>
-
-  <p>Create a New Pet:</p>
-
-  <label for="image">Image:</label><br>
-  <input type='text' name='pet[image]'><br/>
-
-  <label for="name">Name:</label><br>
-  <input type='text' name='pet[name]'><br/>
-
-  <label for="age">Age:</label><br>
-  <input type='text' name='pet[age]'><br/>
-
-  <label for="sex">Sex:</label><br>
-  <input type='text' name='pet[sex]'><br/>
-
-  <label for="description">Description:</label><br>
-  <textarea rows = "5" cols = "30" name = 'pet[description]'></textarea><br/>
-
- 
-  <p> <input type='submit' value="Create pet"/> </p>
-</form>
+<%= form_tag "/shelters/#{@shelter_id}/pets" do %>
+          <%= label_tag :image %><br/>
+          <%= text_field_tag :image %><br/>
+          <%= label_tag :name %><br/>
+          <%= text_field_tag :name %><br/>
+          <%= label_tag :age %> <br/>
+          <%= text_field_tag :age %> <br/>
+          <%= label_tag :sex %> <br/>
+          <%= text_field_tag :sex %><br/>
+          <%= label_tag :description %><br/>
+          <%= text_area_tag :description %><br/>
+          <%= hidden_field_tag 'Available'%>
+          <br>
+          <%= submit_tag "Create Pet" %>
+          <% end %>

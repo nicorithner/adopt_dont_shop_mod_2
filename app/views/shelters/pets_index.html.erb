@@ -1,8 +1,6 @@
 <h1><%= @shelter_name%> Available Pets</h1>
 
-<form action="/shelters/:id/pets/new">
-    <input type="submit" value="Create Pet" />
-</form>
+<%= link_to "Create Pet", "/shelters/#{@shelter_id}/pets/new"%>
 
 <% @shelter.each do |pet| %>
 

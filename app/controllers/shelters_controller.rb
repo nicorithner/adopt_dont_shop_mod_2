@@ -48,6 +48,7 @@ class SheltersController < ApplicationController
   def pets_index
     # binding.pry
     @shelter = Shelter.find(params["shelter_id"]).pets
+    @shelter_id = Shelter.find(params["shelter_id"]).id
     @shelter_name = Shelter.find(params["shelter_id"]).name
   end
 
