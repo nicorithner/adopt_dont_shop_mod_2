@@ -1,15 +1,15 @@
 <%= form_tag "/shelters/#{@shelter_id}/pets" do %>
-          <%= label_tag :image %><br/>
-          <%= text_field_tag :image %><br/>
-          <%= label_tag :name %><br/>
-          <%= text_field_tag :name %><br/>
-          <%= label_tag :age %> <br/>
-          <%= text_field_tag :age %> <br/>
-          <%= label_tag :sex %> <br/>
-          <%= text_field_tag :sex %><br/>
-          <%= label_tag :description %><br/>
-          <%= text_area_tag :description %><br/>
-          <%= hidden_field_tag 'Available'%>
-          <br>
-          <%= submit_tag "Create Pet" %>
-          <% end %>
+  <%= label_tag :image %><br/>
+  <%= text_field_tag :image %><br/>
+  <%= label_tag :name %><br/>
+  <%= text_field_tag :name %><br/>
+  <%= label_tag :age %> <br/>
+  <%= text_field_tag :age %> <br/>
+  <%= label_tag :sex %> <br/>
+  <%= text_field_tag :sex %><br/>
+  <%= label_tag :description %><br/>
+  <%= text_area_tag :description %><br/>
+  <%= hidden_field_tag :status, "Available"%>
+  <br>
+  <%= submit_tag "Create Pet" %>
+<% end %>

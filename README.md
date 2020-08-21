@@ -257,7 +257,7 @@ Then I see the pet with that id including the pet's:
 <!--rails db:migrate-->
 
 ```
-- [] done
+- [x] done
 
 User Story 10, Shelter Pet Creation
 
@@ -281,13 +281,13 @@ and I am redirected to the Shelter Pets Index page where I can see the new pet l
   - [x] test set up
   - [x] link from Shelter's Pets index
     - [x] '/shelters/:shelter_id/pets/new'
-  - [] route
+  - [x] route
     - [x] GET to routes form
-    - [] POST
-  - [] view
+    - [x] POST
+  - [x] view
     - [x] form (with 'adoptable' as default status)
-    - [] 'Create Pet' button
-      - [] button redirects to Shelter Pets Index page
+    - [x] 'Create Pet' button
+      - [x] button redirects to Shelter Pets Index page
   - [x] action
 ```
 
