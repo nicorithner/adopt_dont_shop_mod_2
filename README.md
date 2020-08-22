@@ -364,7 +364,10 @@ Next to every shelter, I see a link to edit that shelter's info
 When I click the link
 I should be taken to that shelters edit page where I can update its information just like in User Story 5
 ```
-
+- [] test 
+  When visiting the shelters index page
+  - [] Can see link "edit" next to *each* shelter's name
+  - [] Clicking "Edit" routes to edit page
 ```
 - [] done
 
