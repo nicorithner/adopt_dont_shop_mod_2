@@ -7,3 +7,5 @@
 <ul>Shelter: <%= @pet.shelter.name %></ul>
 <ul>Sex: <%= @pet.description %></ul>
 <ul>Status: <%= @pet.status %></ul>
+
+<ul><%= button_to "Update Pet", "/pets/#{@pet.id}/edit", method: :get %></ul>

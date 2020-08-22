@@ -292,7 +292,7 @@ and I am redirected to the Shelter Pets Index page where I can see the new pet l
 ```
 
 ```
-- [] done
+- [x] done
 
 User Story 11, Pet Update
 
@@ -311,6 +311,18 @@ Then a `PATCH` request is sent to '/pets/:id',
 the pet's data is updated,
 and I am redirected to the Pet Show page where I see the Pet's updated information
 ```
+- [x] test 
+  When visiting the pet show page
+  - [x] Can see link "Update Pet" to update that pet
+  - [x] "Update Pet" links leads to '/pets/:id/edit'
+  - [x] at edit page, can edit pet's info (but status)
+  - [x] Clicking "Update Pet" sends `PATCH` request is sent to '/pets/:id'
+  - [x] Gets redirected to Pet show page and the updated info is there.
+
+- [x] view
+- [x] action
+- [x] route
+
 
 ```
 - [] done
