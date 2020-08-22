@@ -30,4 +30,17 @@ RSpec.describe "shelter index page" do
     expect(page).to have_content("New name")
   end
 
+  it "Shelter Delete From Shelter Index Page" do
+
+    visit "/shelters"
+    expect(page).to have_content("Delete #{@shelter_1.name}")
+    expect(page).to have_content("Delete #{@shelter_2.name}")
+
+    click_on "Delete #{@shelter_2.name}"
+    expect(current_path).to eq("/shelters")
+    expect(page).to have_content("Delete #{@shelter_1.name}")
+    expect(page).to_not have_content("Delete #{@shelter_2.name}")
+  end
+
+
 end
