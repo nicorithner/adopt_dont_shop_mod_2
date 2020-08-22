@@ -369,7 +369,7 @@ I should be taken to that shelters edit page where I can update its information 
   - [x] Can see link "edit" next to *each* shelter's name
   - [x] Clicking "Edit" routes to edit page
 ```
-- [] done
+- [x] done
 
 User Story 14, Shelter Delete From Shelter Index Page
 
@@ -379,9 +379,14 @@ Next to every shelter, I see a link to delete that shelter
 When I click the link
 I am returned to the Shelter Index Page where I no longer see that shelter
 ```
+- [x] test
+  When visiting the shelters index page
+ - [x] Can see link "delete" next to each shelter's name
+ - [x] Clicking "Delete" removes the shelter.
+
 
 ```
-- [] done
+- [x] done
 
 User Story 15, Pet Update From Pets Index Page
 
@@ -392,7 +397,7 @@ When I click the link
 I should be taken to that pets edit page where I can update its information just like in User Story 11
 ```
 ```
-- [] done
+- [x] done
 
 User Story 16, Pet Delete From Pets Index Page
 

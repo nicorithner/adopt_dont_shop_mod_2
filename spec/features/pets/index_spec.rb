@@ -22,4 +22,32 @@ RSpec.describe "pets index page" do
     expect(page).to have_content(@pet_1.shelter.name)
   end
 
+  it "Can Update Pet From Pet Index Page" do
+
+    visit "/shelters/#{@shelter_1.id}/pets"
+    expect(page).to have_selector(:link_or_button, "Edit #{@pet_1.name}")
+
+    click_on "Edit #{@pet_1.name}"
+    expect(current_path).to eq("/pets/#{@pet_1.id}/edit")
+
+    fill_in :name, with: "New name"
+
+    click_on "Update Pet"
+    expect(current_path).to eq("/pets/#{@pet_1.id}")
+    expect(page).to_not have_content("Edit #{@pet_1.name}")
+    expect(page).to have_content("New name")
+  end
+
+  it "It can Delete Pet From Pet's Index Page" do
+
+    visit "/shelters/#{@shelter_1.id}/pets"
+    expect(page).to have_content("Delete #{@pet_1.name}")
+    expect(page).to have_content("Delete #{@pet_2.name}")
+
+    click_on "Delete #{@pet_2.name}"
+    expect(current_path).to eq("/pets")
+    expect(page).to have_content("Delete #{@pet_1.name}")
+    expect(page).to_not have_content("Delete #{@pet_2.name}")
+  end
+
 end
