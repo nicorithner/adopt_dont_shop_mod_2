@@ -16,9 +16,8 @@ RSpec.describe "Shelter Update" do
   it "Can update shelter info, click submit, and be redirected to shelter's show page where update is reflected" do
     visit "/shelters/#{@shelter_1.id}/edit"
 
-    fill_in 'shelter[name]', with: "Updated Name"
-
-    click_on "Update"
+    fill_in :name, with: "Updated Name"
+    click_on "Submit Changes"
 
     expect(current_path).to eq("/shelters/#{@shelter_1.id}")
     expect(page).to have_content("Updated Name")
