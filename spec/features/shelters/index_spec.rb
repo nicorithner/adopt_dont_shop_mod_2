@@ -14,4 +14,20 @@ RSpec.describe "shelter index page" do
     expect(page).to have_content(@shelter_2.name)
   end
 
+  it "Shelter Update From Shelter Index Page" do
+
+    visit "/shelters"
+    expect(page).to have_selector(:link_or_button, "Edit #{@shelter_1.name}")
+
+    click_on "Edit #{@shelter_1.name}"
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
+
+    fill_in :name, with: "New name"
+
+    click_on "Submit Changes"
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}")
+    expect(page).to_not have_content("Edit #{@shelter_1.name}")
+    expect(page).to have_content("New name")
+  end
+
 end

@@ -354,7 +354,7 @@ and I am redirected to the pet index page where I no longer see this pet
 Users should be able to use the site easily. This means making sure there are links/buttons to reach all parts of the site and the styling/layout is sensible.
 
 ```
-- [] done
+- [x] done
 
 User Story 13, Shelter Update From Shelter Index Page
 
@@ -364,7 +364,10 @@ Next to every shelter, I see a link to edit that shelter's info
 When I click the link
 I should be taken to that shelters edit page where I can update its information just like in User Story 5
 ```
-
+- [x] test 
+  When visiting the shelters index page
+  - [x] Can see link "edit" next to *each* shelter's name
+  - [x] Clicking "Edit" routes to edit page
 ```
 - [] done
 
