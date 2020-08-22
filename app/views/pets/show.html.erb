@@ -9,3 +9,4 @@
 <ul>Status: <%= @pet.status %></ul>
 
 <ul><%= button_to "Update Pet", "/pets/#{@pet.id}/edit", method: :get %></ul>
+<%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %>

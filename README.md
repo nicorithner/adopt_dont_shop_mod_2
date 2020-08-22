@@ -325,7 +325,7 @@ and I am redirected to the Pet Show page where I see the Pet's updated informati
 
 
 ```
-- [] done
+- [x] done
 
 User Story 12, Pet Delete
 
