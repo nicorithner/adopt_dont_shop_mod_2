@@ -7,6 +7,8 @@ RSpec.describe "Pet Delete" do
     pet_1 = Pet.create!(image: "frog.jpg", name: "Toby", age: 1, sex: "Male", shelter: shelter_1)
 
     visit "/pets/#{pet_1.id}"
+    expect(page).to have_selector(:link_or_button, 'Delete Pet')
+
     expect(page).to have_content("#{pet_1.name}")
     click_on "Delete Pet"
 

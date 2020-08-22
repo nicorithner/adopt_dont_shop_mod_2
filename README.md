@@ -336,6 +336,16 @@ When I click the link
 Then a 'DELETE' request is sent to '/pets/:id',
 the pet is deleted,
 and I am redirected to the pet index page where I no longer see this pet
+
+- [x] test 
+  When visiting the pet show page
+  - [x] Can see link "Delete Pet" to delete that pet
+  - [x] Clicking "Delete Pet" sends `Delete` request is sent to '/pets/:id'
+  - [x] Gets redirected to pets index page and the pet is gone.
+
+- [x] view
+- [x] action
+- [x] route
 ```
 
 ---
