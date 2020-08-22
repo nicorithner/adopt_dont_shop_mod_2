@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-08-21T17:36:36-06:00">2020-08-21T17:36:36-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-08-21T18:20:42-06:00">2020-08-21T18:20:42-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  98.46%
+  100.0%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.11
+         1.13
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>260</b> relevant lines,
-    <span class="green"><b>256</b> lines covered</span> and
-    <span class="red"><b>4</b> lines missed. </span>
+    <b>268</b> relevant lines,
+    <span class="green"><b>268</b> lines covered</span> and
+    <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
-  98.46%
+  100.0%
 </span>
 )
   </div>
@@ -84,11 +84,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#085a2b28aa6e03db58380f487b8bdeb11ad9e987" class="src_link" title="app/controllers/pets_controller.rb">app/controllers/pets_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">25</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">14</td>
+            <td class="cell--number">36</td>
+            <td class="cell--number">21</td>
+            <td class="cell--number">21</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.14</td>
+            <td class="cell--number">1.19</td>
             
           </tr>
         
@@ -293,9 +293,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#23afc3cee3990ee0bf0ee8b7f8ce3d485cc3b654" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">20</td>
-            <td class="cell--number">15</td>
-            <td class="cell--number">15</td>
+            <td class="cell--number">21</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">16</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -325,12 +325,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#6896c97bd32143423867949951411c6129e83ab3" class="src_link" title="spec/features/pets/update_spec.rb">spec/features/pets/update_spec.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">71.43 %</td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">24</td>
             <td class="cell--number">14</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">0.71</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
             
           </tr>
         
@@ -506,8 +506,8 @@
     
 
     <div class="t-line-summary">
-      <b>14</b> relevant lines.
-      <span class="green"><b>14</b> lines covered</span> and
+      <b>21</b> relevant lines.
+      <span class="green"><b>21</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -585,8 +585,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="7">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="3" data-linenumber="7">
+            <span class="hits">3</span>
             
 
             
@@ -734,7 +734,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  </code>
           </li>
         </div>
       
@@ -745,7 +745,7 @@
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">  def edit</code>
           </li>
         </div>
       
@@ -756,23 +756,12 @@
 
             
 
-            <code class="ruby">  def pet_params</code>
+            <code class="ruby">    @pet = Pet.find(params[:id])</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    params.permit(:image, :name, :age, :sex, :description, :status, :shelter_id)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="24">
+          <li class="never" data-hits="" data-linenumber="23">
             
             
 
@@ -783,7 +772,139 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def update</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    pet = Pet.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    pet.update(pet_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="28">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    pet.save</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="29">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    redirect_to(&quot;/pets/#{pet.id}&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="31">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="32">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def pet_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="33">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    params.permit(:image, :name, :age, :sex, :description, :status, :shelter_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="35">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
             
             
 
@@ -4164,8 +4285,8 @@
     
 
     <div class="t-line-summary">
-      <b>15</b> relevant lines.
-      <span class="green"><b>15</b> lines covered</span> and
+      <b>16</b> relevant lines.
+      <span class="green"><b>16</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -4364,13 +4485,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="18">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"> </code>
+            
+
+            <code class="ruby">  patch &#39;/pets/:id&#39;, to: &#39;pets#update&#39;</code>
           </li>
         </div>
       
@@ -4381,12 +4502,23 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby"> </code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
             
             
 
@@ -5127,8 +5259,8 @@
   <div class="header">
     <h3>spec/features/pets/update_spec.rb</h3>
     <h4>
-      <span class="red">
-  71.43%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -5138,8 +5270,8 @@
 
     <div class="t-line-summary">
       <b>14</b> relevant lines.
-      <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="green"><b>14</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -5233,7 +5365,7 @@
 
             
 
-            <code class="ruby">    pet_1 = Pet.create!(image: &quot;Cool_horse.jpg&quot;, name: &quot;Seth&quot;, age: 3, sex: &quot;Male&quot;, description: &quot;Tony is full of energy and it&#39;s always ready to go for a ride&quot;,shelter_id: shelter_1.id)</code>
+            <code class="ruby">    pet_1 = Pet.create!(image: &quot;Cool_horse.jpg&quot;, name: &quot;Seth&quot;, age: 3, sex: &quot;Male&quot;, description: &quot;Full of energy and it&#39;s always ready to go for a ride&quot;,shelter_id: shelter_1.id)</code>
           </li>
         </div>
       
@@ -5321,7 +5453,7 @@
 
             
 
-            <code class="ruby">    fill_in :name, with: &quot;Seth the Horse&quot;</code>
+            <code class="ruby">    fill_in :name, with: &quot;Tony&quot;</code>
           </li>
         </div>
       
@@ -5337,8 +5469,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="18">
-            
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
             
 
             
@@ -5348,8 +5480,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="19">
-            
+          <li class="covered" data-hits="1" data-linenumber="19">
+            <span class="hits">1</span>
             
 
             
@@ -5370,8 +5502,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="21">
-            
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
             
 
             
@@ -5381,13 +5513,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="22">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    expect(page).to have_content(&quot;Seth the horse&quot;)</code>
+            
+
+            <code class="ruby">    expect(page).to have_content(&quot;Tony&quot;)</code>
           </li>
         </div>
       
