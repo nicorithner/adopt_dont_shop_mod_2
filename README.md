@@ -409,7 +409,7 @@ I should be taken to the pets index page where I no longer see that pet
 ```
 
 ```
-- [] done
+- [x] done
 
 User Story 17, Shelter Links
 

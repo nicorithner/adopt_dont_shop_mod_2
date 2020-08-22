@@ -24,4 +24,10 @@ RSpec.describe "shelter's pets index page" do
     expect(page).to_not have_content(@pet_3.name)
   end
 
+  it "Pet name is a link to pet's show page" do
+    visit "pets"
+
+    expect(page).to have_link("#{@pet_1.name}", count: 1, exact: true)
+  end
+
 end
