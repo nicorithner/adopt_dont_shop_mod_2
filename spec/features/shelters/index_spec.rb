@@ -45,6 +45,10 @@ RSpec.describe "shelter index page" do
   it "Shelter name is a link to shelter's show page" do
     visit "shelters"
 
-    expect(page).to have_link("#{@shelter_1.name}", count: 1, exact: true)
+    expect(page).to have_link("#{@shelter_1.name}")
+  end
+
+  it "Link to Shelters Index is present in every page across the site"
+    
   end
 end

@@ -1,3 +1,6 @@
+<ul><%=link_to "Shelters Index", "/shelters"%></ul>
+<ul><%=link_to "Pets Index", "/pets"%></ul>
+
 <%= form_tag "/shelters/#{@shelter_id}/pets" do %>
   <%= label_tag :image %><br/>
   <%= text_field_tag :image %><br/>
