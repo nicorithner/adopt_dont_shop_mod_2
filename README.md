@@ -439,7 +439,8 @@ Then I see a link at the top of the page that takes me to the Pet Index
 ```
 
 ```
-- [x] done
+- [x] done 
+[comment]: <> (missing test)
 
 User Story 20, Shelter Index Link
 
@@ -450,6 +451,7 @@ Then I see a link at the top of the page that takes me to the Shelter Index
 
 ```
 - [x] done
+[comment]: <> (missing test)
 
 User Story 21, Shelter Pet Index Link
 
