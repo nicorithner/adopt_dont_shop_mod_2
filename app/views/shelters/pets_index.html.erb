@@ -1,10 +1,13 @@
+<ul><%=link_to "Shelters Index", "/shelters"%></ul>
+<ul><%=link_to "Pets Index", "/pets"%></ul>
+
 <h1><%= @shelter_name%> Available Pets</h1>
 
 <%= link_to "Create Pet", "/shelters/#{@shelter_id}/pets/new"%>
 
 <% @shelter.each do |pet| %>
 
-  <h3><%= pet.name %></h3>
+  <h3><a href="/pets/<%= pet.id %>"><%= pet.name %></a></h3>
   <ul><%= image_tag(pet.image, alt: pet.name, class: "pet-index-image") %> </ul> 
   <ul>Age: <%= pet.age %></ul>
   <ul>Sex: <%= pet.sex %></ul>
