@@ -1,19 +1,52 @@
-<ul><%=link_to "Shelters Index", "/shelters"%></ul>
-<ul><%=link_to "Pets Index", "/pets"%></ul>
+<!DOCTYPE html>
+<html lang="en">
 
-<a href="/shelters">Shelters List</a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelters Index</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<ul><h3><%= @shelter.name %></h3></ul>
-<ul><%= @shelter.address %>, <%= @shelter.city %> </ul>
-<ul><%= @shelter.state %>, <%= @shelter.zip %></ul>
+  <body>
+   <div class="main_container">
+      <nav>
+        <a href="/">HOME</a>
+        <a href="/shelters">SHELTERS</a>
+        <a href="/pets">PETS</a>
+      </nav>
+
+      <main>
+        <div class="child">
+          
+          <div class="grid-pet-container">
+            <div class="info">
+              <ul><h3><%= @shelter.name %></h3></ul>
+              <ul><%= @shelter.address %>, <%= @shelter.city %> </ul>
+              <ul><%= @shelter.state %>, <%= @shelter.zip %></ul>
+            </div>
+
+            <nav class="links">
+            <ul><%= link_to "#{@shelter.name} pets", "/shelters/#{@shelter.id}/pets" %></ul>
+            <ul><a href="/shelters/<%= @shelter.id %>/edit">Update Shelter</a></ul>
+            <ul><%= link_to "Delete", "/shelters/#{@shelter.id}", method: :delete %></ul>
+            </nav>
+          </div>
+
+        </div>
+
+      </main>
 
 
-<ul><%= link_to "#{@shelter.name} pets", "/shelters/#{@shelter.id}/pets" %></ul>
 
-<ul><a href="/shelters/<%= @shelter.id %>/edit">Update Shelter</a></ul>
+      <footer>
+          <nav>
+        <a href="#">Home</a>
+        <a href="/shelters">Shelters</a>
+        <a href="/pets">Pets</a>
+      </nav>
+        </footer>
+    </div>
 
-<ul><form action="/shelters/<%= @shelter.id %>" method="POST">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete"/>
-</form></ul>
+  </body>
+</html>

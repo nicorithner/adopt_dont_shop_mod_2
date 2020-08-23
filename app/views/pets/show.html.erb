@@ -1,15 +1,58 @@
-<ul><%=link_to "Shelters Index", "/shelters"%></ul>
-<ul><%=link_to "Pets Index", "/pets"%></ul>
+<!DOCTYPE html>
+<html lang="en">
 
-<a href="/pets">Back to pets index</a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelters Index</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<h3><%= @pet.name %></h3>
-<ul><%= image_tag(@pet.image, alt: @pet.name, class: "pet-index-image") %> </ul> 
-<ul>Age: <%= @pet.age %></ul>
-<ul>Sex: <%= @pet.sex %></ul>
-<ul>Shelter: <%= @pet.shelter.name %></ul>
-<ul>Sex: <%= @pet.description %></ul>
-<ul>Status: <%= @pet.status %></ul>
+  <body>
+   <div class="pets_container">
+      <nav>
+        <a href="/">HOME</a>
+        <a href="/shelters">SHELTERS</a>
+        <a href="/pets">PETS</a>
+      </nav>
 
-<ul><%= button_to "Update Pet", "/pets/#{@pet.id}/edit", method: :get %></ul>
-<%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %>
+      <main>
+        <div class="child">
+          
+          <div class="grid-pet-container pet">
+            <div class="banner-grid_item"></div>
+
+            <%= image_tag(@pet.image, alt: @pet.name, class: "pet-index-image") %>
+
+            <nav class="name"> <h1> <a href="/pets/<%= @pet.id %>"><%= @pet.name %></a></h1> </nav>
+
+            <div class="info">
+              <ul>Age: <%= @pet.age %></ul>
+              <ul>Sex: <%= @pet.sex %></ul>
+              <ul>Sex: <%= @pet.description %></ul>
+              <ul>Shelter: <%= @pet.shelter.name %></ul>
+              <ul>Sex: <%= @pet.status %></ul>
+            </div>
+            
+            <nav class="links">
+              <ul><%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %></ul>
+              <ul><%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %></ul>
+            </nav>
+
+          </div>
+        </div>
+      </main>
+
+
+
+      <footer>
+          <nav>
+        <a href="#">Home</a>
+        <a href="/shelters">Shelters</a>
+        <a href="/pets">Pets</a>
+      </nav>
+        </footer>
+    </div>
+
+  </body>
+</html>
