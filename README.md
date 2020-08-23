@@ -440,7 +440,6 @@ Then I see a link at the top of the page that takes me to the Pet Index
 
 ```
 - [x] done 
-[comment]: <> (missing test)
 
 User Story 20, Shelter Index Link
 
@@ -448,10 +447,10 @@ As a visitor
 When I visit any page on the site
 Then I see a link at the top of the page that takes me to the Shelter Index
 ```
+[//]: # (missing test)
 
 ```
 - [x] done
-[comment]: <> (missing test)
 
 User Story 21, Shelter Pet Index Link
 
@@ -459,6 +458,7 @@ As a visitor
 When I visit a shelter show page ('/shelters/:id')
 Then I see a link to take me to that shelter's pets page ('/shelters/:id/pets')
 ```
+[//]: # (missing test)
 
 ```
 - [] done
