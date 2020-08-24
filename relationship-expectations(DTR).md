@@ -1,8 +1,8 @@
 **Project:** Adopt Don't Shop-- Paired
-<br><br>
+<br>
 
 **Group Member Names:** Nico R. & Travis M
-<br><br>
+<br>
 
 **Goals and Expectations for the Project (What does each group member hope to get out of this project? What do we want to achieve as a team? How will we know that we're successful?):** <br>
 Nico: Would like to learn how to use Rails efficiently.
