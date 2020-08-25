@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_011704) do
     t.bigint "shelter_id"
     t.string "status"
     t.text "description"
+    t.boolean "favorite"
     t.index ["shelter_id"], name: "index_pets_on_shelter_id"
   end
 
