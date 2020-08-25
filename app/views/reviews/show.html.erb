@@ -20,16 +20,16 @@
         <div class="child">
 
           <div class="grid-pet-container pet">
-            <div class="banner-grid_item"></div>
-
-
             <div class="info">
+
+              <h1><u><%= @shelter.name %></u></h1><br>
               <% @shelter.reviews.each do |review| %>
-                <ul><b>Title: <%= review.title %></ul></b>
-                <ul><b>Body: </b><%= review.content %></ul>
+                <ul><b>Title: </b><%= review.title %></ul>
+                <ul><%= review.content %></ul>
                 <ul> <%= review.optional_picture %></ul>
+                <ul>---------------------------------------------------------------------------</ul>
+                <br>
                     <% end %>
-            </div>
 
           </div>
         </div>
