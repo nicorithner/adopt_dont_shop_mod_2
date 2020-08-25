@@ -12,9 +12,12 @@ I can see this favorite indicator from any page in the application
 
 #### Notes: 
 
-A VISITOR can vote a pet as favorite, and because we have no "users", I think PETS will need a column in their table to say they are a FAVORITE and maybe one to say they are NOT_FAVORITE. 
+A VISITOR can vote a pet as favorite, and because we have no "users", I think PETS will need a column in their table to say they are a FAVORITE. 
 
-  - [ ] Add favorite indicator in the nav bar
+  - [x] Add favorite indicator in the nav bar
+  - [ ] Add column 'favorite:boolean' to  pets table
+  <!--rails generate migration add_favorite_to_pets favorite:boolean-->
+<!--rails db:migrate-->
   - [ ] Favorite indicator shows count of fav pets
   - [ ] Nav bar - with indicator - is in every page
 
