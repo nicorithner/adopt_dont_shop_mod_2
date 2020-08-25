@@ -29,7 +29,7 @@ RSpec.describe "add review to shelter" do
     click_on "Update Review"
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews")
 
-    expect(page).to have_content("Good, not great")
+    expect(page).to have_content("Great place!")
   end
 
   # it 'I can not create a review without a title' do
