@@ -7,9 +7,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
-     shelter = Shelter.find(params[:shelter_id])
-     review = shelter.reviews.create(review_params)
-     redirect_to("/shelters/#{shelter.id}/reviews")
+     @shelter = Shelter.find(params[:shelter_id])
+     review = @shelter.reviews.new(review_params)
+     if review.save
+       redirect_to("/shelters/#{@shelter.id}/reviews")
+     else
+       flash[:notice] = "Review not created: Required information missing"
+       render :new
+     end
    end
 
    def show
