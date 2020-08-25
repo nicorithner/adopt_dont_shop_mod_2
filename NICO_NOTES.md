@@ -25,7 +25,7 @@ A VISITOR can vote a pet as favorite, and because we have no "users", I think PE
 
 
 ### User Story 9, Favorite Creation
-- [ ] done
+- [x] done
 
 As a visitor
 When I visit a pet's show page
@@ -39,7 +39,7 @@ The favorite indicator in the nav bar has incremented by one
   - [x] Add favorite link to toggling pet's favorite status to true.
       `@pet_1.toggle(:favorite)` works but I need a way to implement it on click
   - [x] Clicking the favorite link visitor remains in show page.
-  - [] flash message indicating that the pet has been added.
+  - [x] flash message indicating that the pet has been added.
   - [x] Favorite indicator shows updated count of fav pets
 
 ### User Story 10, Favorite Index Page
