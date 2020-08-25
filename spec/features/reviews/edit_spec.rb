@@ -22,20 +22,15 @@ RSpec.describe "add review to shelter" do
     expect(page).to have_content("We loved")
   end
 
-  # it "Can create a new review and see it in shelter's index page" do
-  #   visit "/shelters/#{@shelter_1.id}/reviews/new"
-  #
-  #   fill_in :title, with: "Good, not great"
-  #   fill_in :rating, with: 3
-  #   fill_in :content, with: "It was alright, we weren't impressed."
-  #   fill_in :optional_picture, with: "here's a photo"
-  #
-  #   click_on "Submit Review"
-  #   expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews")
-  #
-  #   expect(page).to have_content("Good, not great")
-  #   expect(page).to have_content("we weren't")
-  # end
+  it "When the form is submitted, I should return to that shelter's show page" do
+    visit "/reviews/#{@review_1.id}/edit"
+
+
+    click_on "Update Review"
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews")
+
+    expect(page).to have_content("Good, not great")
+  end
 
   # it 'I can not create a review without a title' do
   #   visit "/shelters/#{@shelter_1.id}/reviews/new"
