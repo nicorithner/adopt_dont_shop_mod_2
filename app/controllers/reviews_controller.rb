@@ -25,8 +25,21 @@ class ReviewsController < ApplicationController
      @review = Review.find(params[:id])
    end
 
+   def update
+     review = Review.find(params[:id])
+     @shelter = review[:shelter_id]
+     review.update(review_params)
+     redirect_to("/shelters/#{@shelter}/reviews")
+   end
+
    private
    def review_params
      params.permit(:title, :rating, :content, :optional_picture)
    end
 end
+
+# def update
+#   pet = Pet.find(params[:id])
+#   pet.update(pet_params)
+#   redirect_to("/pets/#{pet.id}")
+# end
