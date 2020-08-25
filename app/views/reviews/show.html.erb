@@ -27,6 +27,8 @@
                 <ul><b>Title: </b><%= review.title %></ul>
                 <ul><%= review.content %></ul>
                 <ul> <%= review.optional_picture %></ul>
+                <nav><ul><%= link_to "Edit Review", "/reviews/#{review.id}/edit" %></ul>
+                </nav>
                 <ul>---------------------------------------------------------------------------</ul>
                 <br>
                     <% end %>
