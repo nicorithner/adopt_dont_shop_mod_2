@@ -19,7 +19,7 @@
       <main>
         <div class="child">
           <h1>Shelters</h1><br>
-          
+
           <nav><%= link_to "New Shelter", "/shelters/new"%></nav>
 
           <div class="grid">
@@ -27,9 +27,10 @@
               <div class="grid-item shelter">
                 <ul><h3><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h3></ul>
 
-                
+
                 <nav><ul><%= link_to "Edit #{shelter.name}", "/shelters/#{shelter.id}/edit" %></ul>
                 <ul><%= link_to "Delete #{shelter.name}", "/shelters/#{shelter.id}", method: :delete %></ul>
+                <ul><%= link_to "New Review", "/shelters/#{shelter.id}/reviews/new"%></ul>
                 </nav>
               </div>
             <% end %>
@@ -52,4 +53,3 @@
 
   </body>
 </html>
-

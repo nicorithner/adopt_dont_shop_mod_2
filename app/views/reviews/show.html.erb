@@ -9,7 +9,7 @@
   </head>
 
   <body>
-   <div class="main_container">
+   <div class="pets_container">
       <nav>
         <a href="/">HOME</a>
         <a href="/shelters">SHELTERS</a>
@@ -19,28 +19,22 @@
       <main>
         <div class="child">
 
-          <div class="grid-pet-container">
+          <div class="grid-pet-container pet">
             <div class="info">
-              <ul><h3><%= @shelter.name %></h3></ul>
-              <ul><%= @shelter.address %>, <%= @shelter.city %> </ul>
-              <ul><%= @shelter.state %>, <%= @shelter.zip %></ul>
+
+              <h1><u><%= @shelter.name %></u></h1><br>
               <% @shelter.reviews.each do |review| %>
-                <ul> <%= review.title %></ul>
-                <ul> <%= review.content %></ul>
+                <ul><b>Title: </b><%= review.title %></ul>
+                <ul><%= review.content %></ul>
                 <ul> <%= review.optional_picture %></ul>
+                <nav><ul><%= link_to "Edit Review", "/reviews/#{review.id}/edit" %></ul>
+                </nav>
+                <ul>---------------------------------------------------------------------------</ul>
+                <br>
                     <% end %>
-            </div>
 
-            <nav class="links">
-            <ul><%= link_to "#{@shelter.name} pets", "/shelters/#{@shelter.id}/pets" %></ul>
-            <ul><a href="/shelters/<%= @shelter.id %>/edit">Update Shelter</a></ul>
-            <ul><%= link_to "Delete", "/shelters/#{@shelter.id}", method: :delete %></ul>
-            <ul><%= link_to "New Review", "/shelters/#{@shelter.id}/reviews/new"%></ul>
-            </nav>
           </div>
-
         </div>
-
       </main>
 
 

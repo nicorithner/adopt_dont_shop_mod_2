@@ -17,4 +17,4 @@ content_1 = "We loved taking our little baby here! Our yak loves
 getting his cute little paws worked on by Beth, she's amazing!"
 
 review_1 = Review.create!(title: "Great place!", rating: 5,
-                          content: content_1, option_picture: "https://i.ibb.co/YLxykRV/yak.png")
+                          content: content_1, optional_picture: "https://i.ibb.co/YLxykRV/yak.png")
