@@ -37,15 +37,19 @@ RSpec.describe "pets index page" do
       visit "/pets/#{@pet_1.id}"
       expect(@pet_1[:favorite]).to be_in([false])
       click_on "Favorite"
+      @pet_1.reload
       expect(current_path).to eq("/pets/#{@pet_1.id}")
       expect(@pet_1[:favorite]).to be_in([true])
+      expect(@pet_1.favorite).to eq(true)
       ###====== Flash test will go here
     end
 
     it "Favorite count in nav bar is updated after clicking fav link" do
       visit "/pets/#{@pet_1.id}"
       click_on "Favorite"
-      expect(page).to have_content("Favorite 2")
+      @pet_1.reload
+      visit "/pets"
+      expect(page).to have_content("Favorite 3")
     end
   end
 

@@ -17,5 +17,12 @@ Rails.application.routes.draw do
   get '/pets/:id/edit', to: 'pets#edit'
   patch '/pets/:id', to: 'pets#update'
   delete '/pets/:id', to: 'pets#destroy'
+  # patch '/pets/:id/toogle_favorite', to: 'pets#toogle_favorite'
+  
+  resources :pets do
+    member do
+      patch :toogle_favorite
+    end
+  end
  
 end

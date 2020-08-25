@@ -5,7 +5,6 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
-    # @pet = Pet.find(params["shelter_id"])
   end
 
   def new
@@ -27,15 +26,21 @@ class PetsController < ApplicationController
     pet.update(pet_params)
     redirect_to("/pets/#{pet.id}")
   end
-
+  
   def destroy
     Pet.destroy(params[:id])
     redirect_to "/pets"
   end
   
+  def toogle_favorite
+    @pet = Pet.find(params[:id])
+    @pet.update(favorite: !@pet.favorite)
+    redirect_to("/pets/#{@pet.id}")
+  end
+
   private
   def pet_params
-    params.permit(:image, :name, :age, :sex, :description, :status, :shelter_id)
+    params.permit(:image, :name, :age, :sex, :description, :status, :shelter_id, :favorite)
   end
 
 end

@@ -36,12 +36,15 @@ I see a flash message indicating that the pet has been added to my favorites lis
 The favorite indicator in the nav bar has incremented by one
 
 #### Notes: 
-
   - [] Add favorite link to toggling pet's favorite status to true.
+      `@pet_1.toggle(:favorite)` works but I need a way to implement it on click
   - [] Clicking the favorite link visitor remains in show page.
   - [] flash message indicating that the pet has been added.
   - [] Favorite indicator shows updated count of fav pets
 
+<!-- <ul><%= link_to "Favorite", "/pets/#{@pet.id} "%></ul> -->
+              <!-- remote: true, -->
+              <%= button_to "Favorite", toogle_favorite_pet_path(@pet),  method: :patch %>
 
 ### User Story 10, Favorite Index Page
 - [ ] done
