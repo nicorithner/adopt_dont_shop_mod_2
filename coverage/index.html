@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-08-24T19:19:00-06:00">2020-08-24T19:19:00-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-08-24T23:02:25-06:00">2020-08-24T23:02:25-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.28
+         1.29
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>345</b> relevant lines,
-    <span class="green"><b>345</b> lines covered</span> and
+    <b>349</b> relevant lines,
+    <span class="green"><b>349</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -88,7 +88,7 @@
             <td class="cell--number">23</td>
             <td class="cell--number">23</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.74</td>
+            <td class="cell--number">1.78</td>
             
           </tr>
         
@@ -128,11 +128,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#8f37dea57a29e72b5fbdde7d59881775117cade5" class="src_link" title="app/models/pet.rb">app/models/pet.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">9</td>
             <td class="cell--number">5</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">3</td>
+            <td class="cell--number">5</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">2.00</td>
             
           </tr>
         
@@ -304,11 +304,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#145017a118d27f6c38ff61a7921e049b46ad2713" class="src_link" title="spec/features/pets/favorite_spec.rb">spec/features/pets/favorite_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">26</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">14</td>
+            <td class="cell--number">27</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">16</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.43</td>
+            <td class="cell--number">1.38</td>
             
           </tr>
         
@@ -563,8 +563,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="3">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="6" data-linenumber="3">
+            <span class="hits">6</span>
             
 
             
@@ -1730,8 +1730,8 @@
     
 
     <div class="t-line-summary">
-      <b>3</b> relevant lines.
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>5</b> relevant lines.
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1788,6 +1788,50 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="5">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def self.favorites</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="6" data-linenumber="7">
+            <span class="hits">6</span>
+            
+
+            
+
+            <code class="ruby">    Pet.where(favorite: &quot;true&quot;).count</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
             
             
 
@@ -4602,8 +4646,8 @@
     
 
     <div class="t-line-summary">
-      <b>14</b> relevant lines.
-      <span class="green"><b>14</b> lines covered</span> and
+      <b>16</b> relevant lines.
+      <span class="green"><b>16</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -4720,7 +4764,7 @@
 
             
 
-            <code class="ruby">    @pet_2 = Pet.create!(image: &quot;english_bulldog.jpg&quot;, name: &quot;Puppy2&quot;, age: 1, sex: &quot;Female&quot;, shelter_id: @shelter_1.id, favorite: &quot;false&quot;)</code>
+            <code class="ruby">    @pet_2 = Pet.create!(image: &quot;english_bulldog.jpg&quot;, name: &quot;Puppy2&quot;, age: 1, sex: &quot;Female&quot;, shelter_id: @shelter_1.id, favorite: &quot;true&quot;)</code>
           </li>
         </div>
       
@@ -4731,7 +4775,7 @@
 
             
 
-            <code class="ruby">    @pet_3 = Pet.create!(image: &quot;golden.jpg&quot;, name: &quot;Puppy3&quot;, age: 2, sex: &quot;Female&quot;, shelter_id: @shelter_2.id, favorite: &quot;false&quot;)</code>
+            <code class="ruby">    @pet_3 = Pet.create!(image: &quot;golden.jpg&quot;, name: &quot;Puppy3&quot;, age: 2, sex: &quot;Female&quot;, shelter_id: @shelter_2.id, favorite: &quot;true&quot;)</code>
           </li>
         </div>
       
@@ -4857,24 +4901,24 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    </code>
+            
+
+            <code class="ruby">    visit &quot;/pets&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="24">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    expect(page).to have_content(&quot;Favorite 2&quot;)</code>
           </li>
         </div>
       
@@ -4885,12 +4929,23 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
             
             
 
