@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_011354) do
+ActiveRecord::Schema.define(version: 2020_08_25_011704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_011354) do
     t.integer "rating"
     t.string "content"
     t.bigint "shelter_id"
+    t.string "optional_picture", default: "none"
     t.index ["shelter_id"], name: "index_reviews_on_shelter_id"
   end
 
