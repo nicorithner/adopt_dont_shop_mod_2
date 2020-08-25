@@ -35,6 +35,12 @@ I'm taken back to that pet's show page
 I see a flash message indicating that the pet has been added to my favorites list
 The favorite indicator in the nav bar has incremented by one
 
+#### Notes: 
+
+  - [] Add favorite link to toggling pet's favorite status to true.
+  - [] Clicking the favorite link visitor remains in show page.
+  - [] flash message indicating that the pet has been added.
+  - [] Favorite indicator shows updated count of fav pets
 
 
 ### User Story 10, Favorite Index Page

@@ -12,16 +12,41 @@ RSpec.describe "pets index page" do
     @pet_4 = Pet.create!(image: "cat.jpg", name: "Kitten1", age: 2, sex: "Male", shelter_id: @shelter_2.id, favorite: "false")
   end
 
-  it "favorite indicator in the nav bar" do
-    visit "/pets"
+  describe "Nav bar favorite features" do
 
-    expect(page).to have_content("Favorite")
-    expect(@pet_1[:favorite]).to be_in([false])
+    it "favorite indicator in the nav bar" do
+      visit "/pets"
+      expect(page).to have_content("Favorite")
+      expect(@pet_1[:favorite]).to be_in([false])
+    end
+
+    it "Favorite indicator shows count of fav pets" do
+      visit "/pets"
+      expect(page).to have_content("Favorite 2")
+    end
   end
 
-  it "Favorite indicator shows count of fav pets" do
-    visit "/pets"
-    expect(page).to have_content("Favorite 2")
+  describe "Favorite toggle link in pet's show page" do
+
+    it "It has favorite link" do
+      visit "/pets/#{@pet_1.id}"
+      expect(page).to have_selector(:link_or_button, 'Favorite')
+    end
+
+    it "Clicking favorite link toggles to true, remains in show page and there is a flash message confirming" do
+      visit "/pets/#{@pet_1.id}"
+      expect(@pet_1[:favorite]).to be_in([false])
+      click_on "Favorite"
+      expect(current_path).to eq("/pets/#{@pet_1.id}")
+      expect(@pet_1[:favorite]).to be_in([true])
+      ###====== Flash test will go here
+    end
+
+    it "Favorite count in nav bar is updated after clicking fav link" do
+      visit "/pets/#{@pet_1.id}"
+      click_on "Favorite"
+      expect(page).to have_content("Favorite 2")
+    end
   end
 
 end
