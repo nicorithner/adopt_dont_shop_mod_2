@@ -269,6 +269,35 @@
           null
         ]
       },
+      "/Users/nicomacbook/turing/2module/adopt_dont_shop_mod_2/spec/features/pets/favorite_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/nicomacbook/turing/2module/adopt_dont_shop_mod_2/spec/features/pets/index_spec.rb": {
         "lines": [
           1,
@@ -700,7 +729,7 @@
         "lines": [
           1,
           1,
-          4,
+          5,
           null,
           null,
           1,
@@ -804,6 +833,6 @@
         ]
       }
     },
-    "timestamp": 1598220853
+    "timestamp": 1598317066
   }
 }
