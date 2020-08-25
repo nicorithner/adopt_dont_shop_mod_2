@@ -25,20 +25,10 @@ RSpec.describe "add review to shelter" do
   it "When the form is submitted, I should return to that shelter's show page" do
     visit "/reviews/#{@review_1.id}/edit"
 
-
     click_on "Update Review"
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews")
 
     expect(page).to have_content("Great place!")
   end
-
-  # it 'I can not create a review without a title' do
-  #   visit "/shelters/#{@shelter_1.id}/reviews/new"
-  #
-  #   click_on 'Submit Review'
-  #
-  #   expect(page).to have_content("Review not created: Required information missing")
-  #   expect(page).to have_button('Submit Review')
-  # end
 
 end
