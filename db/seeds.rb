@@ -12,3 +12,9 @@ pet_1 = Pet.create(image: "brown_puppy.jpg", name: "Puppy1", age: 1, sex: "Male"
 pet_2 = Pet.create(image: "english_bulldog.jpg", name: "Puppy2", age: 1, sex: "Female", shelter_id: shelter_1.id)
 pet_3 = Pet.create(image: "golden.jpg", name: "Puppy3", age: 2, sex: "Female", shelter_id: shelter_2.id)
 pet_4 = Pet.create(image: "cat.jpg", name: "Kitten1", age: 2, sex: "Male", shelter_id: shelter_2.id)
+
+content_1 = "We loved taking our little baby here! Our yak loves
+getting his cute little paws worked on by Beth, she's amazing!"
+
+review_1 = Review.create!(title: "Great place!", rating: 5,
+                          content: content_1, option_picture: "https://i.ibb.co/YLxykRV/yak.png")
