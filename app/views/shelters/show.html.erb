@@ -35,6 +35,7 @@
             <ul><%= link_to "#{@shelter.name} pets", "/shelters/#{@shelter.id}/pets" %></ul>
             <ul><a href="/shelters/<%= @shelter.id %>/edit">Update Shelter</a></ul>
             <ul><%= link_to "Delete", "/shelters/#{@shelter.id}", method: :delete %></ul>
+            <ul><%= link_to "New Review", "/shelters/#{@shelter.id}/reviews/new"%></ul>
             </nav>
           </div>
 
