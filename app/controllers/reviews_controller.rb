@@ -37,9 +37,3 @@ class ReviewsController < ApplicationController
      params.permit(:title, :rating, :content, :optional_picture)
    end
 end
-
-# def update
-#   pet = Pet.find(params[:id])
-#   pet.update(pet_params)
-#   redirect_to("/pets/#{pet.id}")
-# end

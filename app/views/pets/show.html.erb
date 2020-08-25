@@ -37,6 +37,8 @@
             <nav class="links">
               <ul><%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %></ul>
               <ul><%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %></ul>
+              <%= link_to "Favorite", toogle_favorite_pet_path(@pet),  method: :patch %>
+
             </nav>
 
           </div>
