@@ -18,12 +18,17 @@
 
       <main>
         <div class="child">
-          
+
           <div class="grid-pet-container">
             <div class="info">
               <ul><h3><%= @shelter.name %></h3></ul>
               <ul><%= @shelter.address %>, <%= @shelter.city %> </ul>
               <ul><%= @shelter.state %>, <%= @shelter.zip %></ul>
+              <% @shelter.reviews.each do |review| %>
+                <ul> <%= review.title %></ul>
+                <ul> <%= review.content %></ul>
+                <ul> <%= review.optional_picture %></ul>
+                    <% end %>
             </div>
 
             <nav class="links">
