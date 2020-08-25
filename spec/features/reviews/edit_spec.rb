@@ -18,7 +18,8 @@ RSpec.describe "add review to shelter" do
     expect(page).to have_selector(:link_or_button, "Edit Review")
 
     click_on "Edit Review"
-    expect(current_path).to eq("/reviews/#{review.id}/edit")
+    expect(current_path).to eq("/reviews/#{@review_1.id}/edit")
+    expect(page).to have_content("We loved")
   end
 
   # it "Can create a new review and see it in shelter's index page" do
