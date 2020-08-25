@@ -21,19 +21,19 @@ RSpec.describe "add review to shelter" do
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews/new")
   end
 
-  # it "Can create a new review and see it in shelter's index page" do
-  #   visit "/shelters/#{@shelter_1.id}/reviews/new"
-  #
-  #   fill_in :title, with: "https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_960_720.jpg"
-  #   fill_in :rating, with: "Snowy"
-  #   fill_in :content, with: 1
-  #   fill_in :optional_picture, with: "Female"
-  #
-  #   click_on "Submit Review"
-  #   expect(current_path).to eq("/shelters/#{@shelter_1.id}/shelters")
-  #
-  #   expect(page).to have_content("Great Place!")
-  #   expect(page).to have_content("We loved")
-  # end
+  it "Can create a new review and see it in shelter's index page" do
+    visit "/shelters/#{@shelter_1.id}/reviews/new"
+
+    fill_in :title, with: "Good, not great"
+    fill_in :rating, with: 3
+    fill_in :content, with: "It was alright, we weren't impressed."
+    fill_in :optional_picture, with: "here's a photo"
+
+    click_on "Submit Review"
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews")
+
+    expect(page).to have_content("Good, not great")
+    expect(page).to have_content("we weren't")
+  end
 
 end

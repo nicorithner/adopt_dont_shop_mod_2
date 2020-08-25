@@ -22,13 +22,13 @@
 
           <div class="form-container">
 
-            <%= form_tag "/shelters/#{@shelter_id}/pets" do %>
+            <%= form_tag "/shelters/#{@shelter_id}/reviews" do %>
               <%= label_tag :title %><br/>
-              <%= text_field_tag :title %><br/>
-              <%= label_tag :rating %><br/>
+              <%= text_field_tag :title, nil, :maxlength => 25, :size => 20 %><br/>
+              <%= label_tag :rating %> (1 through 5)<br/>
               <%= number_field_tag 'rating', nil, max: 5 %><br/>
               <%= label_tag :content %> <br/>
-              <%= text_field_tag :content %> <br/>
+              <%= text_area_tag :content %> <br/>
               <%= label_tag :optional_picture %> <br/>
               <%= text_field_tag :optional_picture %><br/>
               <br>
