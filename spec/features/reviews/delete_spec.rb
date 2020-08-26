@@ -17,5 +17,7 @@ end
     click_on 'Delete Review'
 
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews")
+    expect(page).to_not have_content("We loved")
+
   end
 end
