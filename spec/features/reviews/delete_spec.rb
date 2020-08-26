@@ -11,11 +11,11 @@ RSpec.describe "Reviews have delete button" do
 end
 
   it "When I visit a shelter's show page, I see a link next to each shelter review to delete the review. When I delete a shelter review, I am returned to shelter's show page" do
-    visit "/shelters/#{@shelter_id.id}/reviews"
+    visit "/shelters/#{@shelter_1.id}/reviews"
 
     expect(page).to have_selector(:link_or_button, 'Delete Review')
     click_on 'Delete Review'
 
-    expect(current_path).to eq("/shelters/#{@shelter_id}/reviews")
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews")
   end
 end
