@@ -16,9 +16,10 @@ html {
   width: 100%;
 }
 
+/*
 body {
   color:var(--clr-gray);
-}
+}*/
 
 .container {
   width: 100%;
@@ -92,7 +93,7 @@ nav a {
 }
 
 main {
-  height: 100vh;
+  height: 800px;
   position: relative;
   display: flex;
   justify-content: center;
