@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "add review to shelter" do
+RSpec.describe "Reviews and shelters" do
 
   before :each do
     content_1 = "We loved taking our little baby here! Our yak loves
@@ -29,6 +29,16 @@ RSpec.describe "add review to shelter" do
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews")
 
     expect(page).to have_content("Great place!")
+  end
+
+  it 'I can not edit a review without a title' do
+    visit "/reviews/#{@review_1.id}/edit"
+    fill_in :title, with: ""
+
+    click_on 'Update Review'
+
+    expect(page).to have_content("Review not updated. Required information missing")
+    expect(page).to have_button('Update Review')
   end
 
 end
