@@ -84,6 +84,16 @@ And I'm redirected back to that pets show page where I can see a flash message i
 And I can now see a link to favorite that pet
 And I also see that my favorites indicator has decremented by 1
 
+#### Notes & To_do
+  After a pet is favorited
+  - [] visit page show page the Favorite link is no longer visible.
+  - [] Remove Favorite link is visible instead.
+  - [] Clicking Remove Favorite a delete request is sent to "/favorites/:pet_id".
+    - [] After clicking remain in pet's show page.
+    - [] Flash message indicating pet was removed from favorites.
+    - [] Favorite link is visible again.
+    - [] Favorites count decreased by one.
+
 
 ### User Story 13, Remove a Favorite from Favorites Page
 - [ ] done
