@@ -14,6 +14,8 @@
   <nav class="name">
     <h1> <a href="/pets/<%= pet.id %>"><%= pet.name %></a></h1>
   </nav>
+  <nav><ul><%= link_to "Adopt #{pet.name}", "/pets/#{pet.id}/adopt" %></ul>
+  </nav>
 <%end%>
 </body>
 

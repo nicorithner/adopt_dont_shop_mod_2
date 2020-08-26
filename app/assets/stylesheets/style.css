@@ -77,7 +77,7 @@ body {
 }
 
 nav {
-  position: relative; 
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
@@ -98,7 +98,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 .child {
   text-align: center;

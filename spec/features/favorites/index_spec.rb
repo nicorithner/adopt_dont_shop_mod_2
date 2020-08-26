@@ -30,7 +30,7 @@ RSpec.describe "pets index page" do
     click_on "Favorite"
     @pet_1.reload
     visit "/pets"
-    save_and_open_page
+  
     expect(page).to have_content("Favorite 3")
     expect(page).to have_selector(:link_or_button, 'Favorite')
     expect(page).to have_xpath("//img['brown_puppy.jpg']")
