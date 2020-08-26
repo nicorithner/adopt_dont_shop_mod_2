@@ -53,6 +53,14 @@ Each pet in my favorites shows the following information:
 - pet's name (link to pets show page)
 - pet's image
 
+#### Notes & To_do
+
+  - [] Set Tests
+  - [] ("/favorites")
+  - [] Favorite pets are listed at ("/favorites")
+    - [] Name (is link)
+    - [] Image
+
 
 ### User Story 11, Favorite Indicator links to Index Page
 - [ ] done
