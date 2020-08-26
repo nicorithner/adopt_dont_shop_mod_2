@@ -27,14 +27,15 @@ Rails.application.routes.draw do
       patch :toogle_favorite
     end
   end
+
   get '/favorites', to: 'favorites#index'
  
-
   #reviews
   get '/shelters/:shelter_id/reviews/new', to: 'reviews#new'
   post '/shelters/:shelter_id/reviews', to: 'reviews#create'
   get '/shelters/:shelter_id/reviews', to: 'reviews#show'
   get '/reviews/:id/edit', to: 'reviews#edit'
   patch '/reviews/:id', to: 'reviews#update'
+  delete '/reviews/:id', to: 'reviews#destroy'
 
 end
