@@ -28,6 +28,7 @@
                 <ul><%= review.content %></ul>
                 <ul> <%= review.optional_picture %></ul>
                 <nav><ul><%= link_to "Edit Review", "/reviews/#{review.id}/edit" %></ul>
+                    <ul><%= link_to "Delete Review", "/reviews/#{review.id}", method: :delete %></ul>
                 </nav>
                 <ul>---------------------------------------------------------------------------</ul>
                 <br>
