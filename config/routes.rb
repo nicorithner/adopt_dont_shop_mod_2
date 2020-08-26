@@ -21,11 +21,13 @@ Rails.application.routes.draw do
   patch '/pets/:id', to: 'pets#update'
   delete '/pets/:id', to: 'pets#destroy'
   
+  #favorites
   resources :pets do
     member do
       patch :toogle_favorite
     end
   end
+  get '/favorites', to: 'favorites#index'
  
 
   #reviews
