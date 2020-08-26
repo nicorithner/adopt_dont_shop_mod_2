@@ -14,6 +14,7 @@ RSpec.describe "pets index page" do
 
   it " There is a '/favorites' index page, and Favorite pets are listed there" do
     visit "/favorites"
+    save_and_open_page
     expect(current_path).to eq("/favorites")
     expect(page).to have_content("Puppy2")
     expect(page).to have_content("Puppy3")
@@ -21,6 +22,7 @@ RSpec.describe "pets index page" do
 
   it "Displays pet's image and pet's name is a link to pet's show page" do
     visit "/favorites"
-    expect(page).to have_selector(:link_or_button, 'Puppy1')
+    expect(page).to have_selector(:link_or_button, 'Puppy2')
     expect(page).to have_xpath("//img['brown_puppy.jpg']")
   end
+end

@@ -55,11 +55,11 @@ Each pet in my favorites shows the following information:
 
 #### Notes & To_do
 
-  - [] Set Tests
-  - [] ("/favorites")
-  - [] Favorite pets are listed at ("/favorites")
-    - [] Name (is link)
-    - [] Image
+  - [x] Set Tests
+  - [x] ("/favorites")
+  - [x] Favorite pets are listed at ("/favorites")
+    - [x] Name (is link)
+    - [x] Image
 
 
 ### User Story 11, Favorite Indicator links to Index Page

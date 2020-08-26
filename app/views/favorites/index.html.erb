@@ -9,11 +9,12 @@
 </head>
 
 <body>
-  <% @pets.each do |pet| %>
+  <% @favorites.each do |pet| %>
   <%= image_tag(pet.image, alt: pet.name, class: "pet-index-image") %>
   <nav class="name">
     <h1> <a href="/pets/<%= pet.id %>"><%= pet.name %></a></h1>
   </nav>
+<%end%>
 </body>
 
 </html>

@@ -37,6 +37,7 @@ class PetsController < ApplicationController
     @pet.update(favorite: !@pet.favorite)
     redirect_to("/pets/#{@pet.id}")
     flash[:notice] = "Pet saved to favorites"
+    # render :new
   end
 
   private
