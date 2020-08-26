@@ -20,14 +20,16 @@ Rails.application.routes.draw do
   get '/pets/:id/edit', to: 'pets#edit'
   patch '/pets/:id', to: 'pets#update'
   delete '/pets/:id', to: 'pets#destroy'
-
+  
+  #favorites
   resources :pets do
     member do
       patch :toogle_favorite
     end
   end
 
-
+  get '/favorites', to: 'favorites#index'
+ 
   #reviews
   get '/shelters/:shelter_id/reviews/new', to: 'reviews#new'
   post '/shelters/:shelter_id/reviews', to: 'reviews#create'
