@@ -9,6 +9,15 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+  <header>
+    <nav>
+      <a href="/">HOME</a>
+      <a href="/shelters">SHELTERS</a>
+      <a href="/pets">PETS</a>
+      <a href="#">Favorite <%=favorite%></a>
+    </nav>
+  </header>
+  
   <body>
     <% flash.each do |type, message| %>
      <p><%= message %></p>

@@ -25,4 +25,11 @@ RSpec.describe "pets index page" do
     expect(page).to have_selector(:link_or_button, 'Puppy2')
     expect(page).to have_xpath("//img['brown_puppy.jpg']")
   end
+
+  it "Displays pet's image and pet's name is a link to pet's show page" do
+    visit "/pets"
+
+    expect(page).to have_selector(:link_or_button, 'Favorite')
+    expect(page).to have_xpath("//img['brown_puppy.jpg']")
+  end
 end

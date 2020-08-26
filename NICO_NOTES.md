@@ -43,7 +43,7 @@ The favorite indicator in the nav bar has incremented by one
   - [x] Favorite indicator shows updated count of fav pets
 
 ### User Story 10, Favorite Index Page
-- [ ] done
+- [x] done
 
 As a visitor
 When I have added pets to my favorites list
