@@ -37,8 +37,8 @@ RSpec.describe "Reviews and shelters" do
 
     click_on 'Update Review'
 
-    expect(page).to have_content("Review not created: Required information missing")
-    expect(page).to have_button('Submit Review')
+    expect(page).to have_content("Review not updated. Required information missing")
+    expect(page).to have_button('Update Review')
   end
 
 end
