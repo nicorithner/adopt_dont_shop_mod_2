@@ -1,8 +1,7 @@
 <% @favorites.each do |pet| %>
-  <%= radio_button_tag(:age, "child") %>
-  <%= label_tag(:age_child, "Adopt me!") %>
-  <br><br>
-  <%= pet.name %>
+  <div class="pets" id="<%=pet.name%>">
+    <input type="radio" id="adopt" value="adopt" name="adopt"> Adopt me!</input>
+    <br><br>
+    <%= pet.name %>
   <% end %>
-
-  
+</div>
