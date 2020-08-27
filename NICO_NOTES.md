@@ -143,8 +143,8 @@ And the favorites indicator returns to 0
 #### Notes & To_do
   - [x] Set up tests
     When I have added pets to my favorites list
-    - [] visit my favorites page and ONE 'remove all favorite' link is visible.
-    - [] Clicking 'Remove All Favorite' removes all favorited pets.
-      - [] After clicking remain in Favorites page.
-      - [] I see the text saying that I have no favorited pets.
-      - [] Favorites count decreased to zero.
+    - [x] visit my favorites page and ONE 'remove all favorite' link is visible.
+    - [x] Clicking 'Remove All Favorite' removes all favorited pets.
+      - [x] After clicking remain in Favorites page.
+      - [x] I see the text saying that I have no favorited pets.
+      - [x] Favorites count decreased to zero.

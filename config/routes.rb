@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   end
 
   get '/favorites', to: 'favorites#index'
+  delete '/favorites', to: 'pets#remove_all_favorites'
  
   #reviews
   get '/shelters/:shelter_id/reviews/new', to: 'reviews#new'

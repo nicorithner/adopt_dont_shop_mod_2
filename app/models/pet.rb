@@ -6,5 +6,9 @@ class Pet < ApplicationRecord
   def self.favorites
     Pet.where(favorite: "true").count
   end
-
+  
+  def self.total_favorites
+    Pet.where(favorite: "true")
+  end
+    
 end

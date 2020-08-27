@@ -44,6 +44,11 @@ class PetsController < ApplicationController
     # render :new
   end
 
+  def remove_all_favorites
+    @pets = Pet.all
+    @pets.total_favorites.map {|pet| pet.update(favorite: !pet.favorite)}
+  end
+
   private
   def pet_params
     params.permit(:image, :name, :age, :sex, :description, :status, :shelter_id, :favorite)
