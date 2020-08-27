@@ -24,7 +24,7 @@ RSpec.describe "Shelter Update" do
     expect(page).to_not have_content("Shelter 1")
   end
   
-  it "When updating a new shelter there is a flash message if there are blank fields" do
+  it "When updating a new shelter there is a flash message if there are blank fields in the form" do
     
     visit "/shelters/#{@shelter1.id}"
     click_on "Update Shelter"

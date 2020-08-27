@@ -151,10 +151,10 @@ And the favorites indicator returns to 0
 
 ##### Added fixes to development
 
-## 4 @nico
-- [ ] done
 
-User Story 29, Flash Messages for Shelter Create and Update
+## User Story 29, Flash Messages for Shelter Create and Update
+
+- [] done
 
 As a visitor
 When I am updating or creating a new shelter
@@ -162,6 +162,6 @@ If I try to submit the form with incomplete information
 I see a flash message indicating which field(s) I am missing
 
 #### Notes & To_do
-  - [] Set up tests
+  - [x] Set up tests
     When I am updating or creating a new shelter
   - [] Flash message for incomplete form indicating what field(s) is missing.
