@@ -99,7 +99,7 @@ And I also see that my favorites indicator has decremented by 1
 
 
 ### User Story 13, Remove a Favorite from Favorites Page
-- [ ] done
+- [x] done
 
 As a visitor
 When I have added pets to my favorites list
