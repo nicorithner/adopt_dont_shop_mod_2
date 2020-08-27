@@ -43,7 +43,7 @@ RSpec.describe "Apply for pet" do
       fill_in :description, with: "here's a photo"
 
       click_on "Submit Application"
-      expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews")
+      expect(current_path).to eq("/favorites")
 
   end
 
