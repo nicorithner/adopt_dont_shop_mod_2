@@ -15,8 +15,12 @@ class SheltersController < ApplicationController
       zip: params[:shelter][:zip]
       })
 
-    shelter.save
+    if shelter.save
     redirect_to '/shelters'
+    else 
+      flash[:error] = "Incomplete form."
+      redirect_to request.referrer
+    end
   end
 
   def show

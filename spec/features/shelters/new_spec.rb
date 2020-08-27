@@ -37,8 +37,8 @@ RSpec.describe "Shelter Creation" do
     fill_in 'shelter[name]', with: nil
     click_on "Create Shelter"
     
-    expect(page).to have_content("Form incomplete")
     expect(current_path).to eq('/shelters/new')
+    expect(page).to have_content("Incomplete form")
   end 
 end
 

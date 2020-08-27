@@ -34,7 +34,7 @@ RSpec.describe "Shelter Update" do
     fill_in :name, with: nil
     click_on "Submit Changes"
     
-    expect(page).to have_content("Form incomplete")
+    expect(page).to have_content("Incomplete form")
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
   end 
   
