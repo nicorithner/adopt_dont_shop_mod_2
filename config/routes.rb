@@ -40,6 +40,6 @@ Rails.application.routes.draw do
 
   #adopt
   get '/pets/:id/adopt', to: 'pets#adopt'
-  post '/favorites/adopt', to: 'application#create'
+  post '/favorites/adopt', to: 'app#create'
 
 end
