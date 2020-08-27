@@ -12,27 +12,91 @@ RSpec.describe "pets index page" do
     @pet_4 = Pet.create!(image: "cat.jpg", name: "Kitten1", age: 2, sex: "Male", shelter_id: @shelter_2.id, favorite: "false")
   end
 
-  it " There is a '/favorites' index page, and Favorite pets are listed there" do
-    visit "/favorites"
-    expect(current_path).to eq("/favorites")
-    expect(page).to have_content("Puppy2")
-    expect(page).to have_content("Puppy3")
+  describe " There is a '/favorites' index page, and Favorite pets are listed there" do
+    
+    it "Pets are listed at '/favorites'" do
+      visit "/favorites"
+      expect(current_path).to eq("/favorites")
+      expect(page).to have_content("Puppy2")
+      expect(page).to have_content("Puppy3")
+    end
+
+    it "Displays pet's image and pet's name is a link to pet's show page" do
+      visit "/favorites"
+      expect(page).to have_selector(:link_or_button, 'Puppy2')
+      expect(page).to have_xpath("//img['brown_puppy.jpg']")
+    end
+
+    it "Favorites pets count is incremented after clicking 'Favorite'" do
+      visit "/pets/#{@pet_1.id}"
+      click_on "Favorite"
+      @pet_1.reload
+      visit "/pets"
+      expect(page).to have_content("Favorite 3")
+    end
   end
 
-  it "Displays pet's image and pet's name is a link to pet's show page" do
-    visit "/favorites"
-    expect(page).to have_selector(:link_or_button, 'Puppy2')
-    expect(page).to have_xpath("//img['brown_puppy.jpg']")
+
+  describe "Remove a Favorite from Favorites page" do
+
+    it "There is a 'Remove Favorite' link next to each pet in Favorites index page" do
+      visit "/favorites"
+      within("#pet-#{@pet_2.id}") do
+        expect(page).to have_link("Remove Favorite")
+      end
+    end
+
+    it "Clicking 'Remove Favorite' toggles ':favorite' to false, visitor remains in Favorites page" do
+      visit "/favorites"
+      expect(page).to have_content("Puppy2")
+      expect(page).to have_content("Puppy3")
+
+      within("#pet-#{@pet_2.id}") do
+        click_link "Remove Favorite"
+      end
+
+      visit "/favorites"
+      expect(page).to have_content("Puppy3")
+      expect(page).to_not have_content("Puppy2")
+
+      
+    end
+
+    it "Favorite count in nav bar is updated after clicking 'Remove Favorite' link" do
+      visit "/favorites"
+      expect(page).to have_content("Puppy2")
+      expect(page).to have_content("Puppy3")
+
+      within("#pet-#{@pet_2.id}") do
+        click_link "Remove Favorite"
+      end
+
+      within '.topnav' do
+        expect(page).to have_content("Favorite 1")
+      end
+    end
   end
 
-  it "Displays pet's image and pet's name is a link to pet's show page" do
-    visit "/pets/#{@pet_1.id}"
-    click_on "Favorite"
-    @pet_1.reload
-    visit "/pets"
-  
-    expect(page).to have_content("Favorite 3")
-    expect(page).to have_selector(:link_or_button, 'Favorite')
-    expect(page).to have_xpath("//img['brown_puppy.jpg']")
+  describe "If there are No Favorites in Favorites page there is a message saying so " do
+    it "displays 'no favorites' message" do
+      visit "/favorites"
+      expect(page).to have_content("Puppy2")
+      expect(page).to have_content("Puppy3")
+
+      within("#pet-#{@pet_2.id}") do
+        click_link "Remove Favorite"
+      end
+
+      visit "/favorites"
+      expect(page).to_not have_content("Puppy2")
+
+      within("#pet-#{@pet_3.id}") do
+        click_link "Remove Favorite"
+      end
+
+      visit "/favorites"
+      expect(page).to_not have_content("Puppy3")
+      expect(page).to have_content("You haven't favorited any pets")
+    end
   end
 end

@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorited Pets Index</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Favorited Pets Index</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    
+    <% if @favorites.empty? %>
+    <br>
+    <%= "You haven't favorited any pets" %>
+    <br>
 
-<body>
-  <% @favorites.each do |pet| %>
-  <%= image_tag(pet.image, alt: pet.name, class: "pet-index-image") %>
-  <nav class="name">
-    <h1> <a href="/pets/<%= pet.id %>"><%= pet.name %></a></h1>
-  </nav>
-  <nav><ul><%= link_to "Adopt #{pet.name}", "/pets/#{pet.id}/adopt" %></ul>
-  </nav>
-<%end%>
-</body>
+    <% else %>
 
+      <div class="grid-pet-container}">
+        <% @favorites.each do |pet| %>
+          <div id= <%= "pet-#{pet.id}" %>>
+            <%= image_tag(pet.image, alt: pet.name, class: "pet-index-image") %>
+            <nav class="name"> <h1><a href="/pets/<%= pet.id %>"><%= pet.name %></a></h1></nav>
+            <ul><%= link_to "Remove Favorite", toogle_favorite_pet_path(pet),  method: :patch %></ul>
+          </div>
+        <%end%>
+      </div>
+
+    <% end %>
+
+  </body>
 </html>

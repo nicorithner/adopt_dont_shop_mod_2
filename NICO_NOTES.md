@@ -60,7 +60,9 @@ Each pet in my favorites shows the following information:
   - [x] Favorite pets are listed at ("/favorites")
     - [x] Name (is link)
     - [x] Image
-
+Ways to verify boolean:
+  `expect(@pet_1[:favorite]).to be_in([true])`
+  `expect(@pet_1.favorite).to eq(true)`
 
 ### User Story 11, Favorite Indicator links to Index Page
 - [x] done
@@ -71,7 +73,7 @@ I am taken to the favorites index page
 
 
 ### User Story 12, Can't Favorite a Pet More Than Once
-- [ ] done
+- [x] done
 
 As a visitor
 After I've favorited a pet
@@ -84,9 +86,20 @@ And I'm redirected back to that pets show page where I can see a flash message i
 And I can now see a link to favorite that pet
 And I also see that my favorites indicator has decremented by 1
 
+#### Notes & To_do
+  - [x] Set up tests
+    After a pet is favorited
+    - [x] visit page show page the Favorite link is no longer visible.
+    - [x] Remove Favorite link is visible instead.
+    - [x] Clicking Remove Favorite a delete request is sent to "/favorites/:pet_id".
+      - [x] After clicking remain in pet's show page.
+      - [x] Flash message indicating pet was removed from favorites.
+      - [x] Favorite link is visible again.
+      - [x] Favorites count decreased by one.
+
 
 ### User Story 13, Remove a Favorite from Favorites Page
-- [ ] done
+- [x] done
 
 As a visitor
 When I have added pets to my favorites list
@@ -97,9 +110,17 @@ A delete request is sent to "/favorites/:pet_id"
 And I'm redirected back to the favorites page where I no longer see that pet listed
 And I also see that the favorites indicator has decremented by 1
 
+#### Notes & To_do
+  - [x] Set up tests
+    When I have added pets to my favorites list
+    - [x] visit my favorites page and a 'remove favorite' link is visible next to EACH pet.
+    - [x] Clicking 'Remove Favorite' a delete request is sent to "/favorites/:pet_id".
+      - [x] After clicking remain in Favorites page.
+      - [x] Favorites count decreased by one.
+
 
 ### User Story 14, No Favorites Page
-- [ ] done
+- [x] done
 
 As a visitor
 When I have not added any pets to my favorites list

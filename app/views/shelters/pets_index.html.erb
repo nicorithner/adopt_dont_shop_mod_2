@@ -9,7 +9,7 @@
   </head>
 
   <body>
-   <div class="main_container">
+  <div class="main_container">
       <nav>
         <a href="/">HOME</a>
         <a href="/shelters">SHELTERS</a>
@@ -30,7 +30,7 @@
 
                 <%= image_tag(pet.image, alt: pet.name, class: "pet-index-image") %>
 
-               <nav class="name"> <h1> <a href="/pets/<%= pet.id %>"><%= pet.name %></a></h1> </nav>
+              <nav class="name"> <h1> <a href="/pets/<%= pet.id %>"><%= pet.name %></a></h1> </nav>
 
                 <div class="info">
                   <ul>Age: <%= pet.age %></ul>
