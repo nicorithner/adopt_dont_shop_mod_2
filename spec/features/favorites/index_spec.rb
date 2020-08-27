@@ -62,20 +62,18 @@ RSpec.describe "pets index page" do
       
     end
 
-    # it "Favorite count in nav bar is updated after clicking 'Remove Favorite' link" do
-    #   visit "/favorites"
-    #   expect(page).to have_content("Puppy2")
-    #   expect(page).to have_content("Puppy3")
+    it "Favorite count in nav bar is updated after clicking 'Remove Favorite' link" do
+      visit "/favorites"
+      expect(page).to have_content("Puppy2")
+      expect(page).to have_content("Puppy3")
 
-    #   within '.grid-pet-container' do
-    #     if expect(page).to have_content("Puppy2")
-    #     click_link "Remove Favorite"
-    #     end
-    #   end
+      within("#pet-#{@pet_2.id}") do
+        click_link "Remove Favorite"
+      end
 
-    #   within '.topnav' do
-    #     expect(page).to have_content("Favorite 1")
-    #   end
-    # end
+      within '.topnav' do
+        expect(page).to have_content("Favorite 1")
+      end
+    end
   end
 end
