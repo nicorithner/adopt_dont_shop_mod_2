@@ -58,8 +58,6 @@ RSpec.describe "pets index page" do
       visit "/favorites"
       expect(page).to have_content("Puppy3")
       expect(page).to_not have_content("Puppy2")
-
-      
     end
 
     it "Favorite count in nav bar is updated after clicking 'Remove Favorite' link" do
@@ -99,7 +97,6 @@ RSpec.describe "pets index page" do
       expect(page).to have_content("You haven't favorited any pets")
     end
   end
-end
 
   describe "A 'Remove All Favorites' link removes all pets from favorites once clicked. This displays a message that no pets have been favorited and reduces favorites count to zero" do
     it "'Remove All Favorites' link function" do
