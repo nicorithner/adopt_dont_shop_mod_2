@@ -154,7 +154,7 @@ And the favorites indicator returns to 0
 
 ## User Story 29, Flash Messages for Shelter Create and Update
 
-- [] done
+- [x] done
 
 As a visitor
 When I am updating or creating a new shelter
