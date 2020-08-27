@@ -22,6 +22,9 @@
             <%= image_tag(pet.image, alt: pet.name, class: "pet-index-image") %>
             <nav class="name"> <h1><a href="/pets/<%= pet.id %>"><%= pet.name %></a></h1></nav>
             <ul><%= link_to "Remove Favorite", toogle_favorite_pet_path(pet),  method: :patch %></ul>
+            <nav>
+              <ul><%= link_to "Adopt #{pet.name}", "/pets/#{pet.id}/adopt" %></ul>
+            </nav>
           </div>
         <%end%>
       </div>

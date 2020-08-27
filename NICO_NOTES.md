@@ -148,3 +148,5 @@ And the favorites indicator returns to 0
       - [x] After clicking remain in Favorites page.
       - [x] I see the text saying that I have no favorited pets.
       - [x] Favorites count decreased to zero.
+
+##### Added fixes to development
