@@ -99,6 +99,7 @@ RSpec.describe "pets index page" do
       expect(page).to have_content("You haven't favorited any pets")
     end
   end
+end
 
   describe "A 'Remove All Favorites' link removes all pets from favorites once clicked. This displays a message that no pets have been favorited and reduces favorites count to zero" do
     it "'Remove All Favorites' link function" do

@@ -26,12 +26,12 @@ class PetsController < ApplicationController
     pet.update(pet_params)
     redirect_to("/pets/#{pet.id}")
   end
-  
+
   def destroy
     Pet.destroy(params[:id])
     redirect_to "/pets"
   end
-  
+
   def toogle_favorite
     @pet = Pet.find(params[:id])
     @pet.update(favorite: !@pet.favorite)
@@ -43,6 +43,9 @@ class PetsController < ApplicationController
     end
     # render :new
   end
+
+  def adopt
+    @favorites = Pet.where(favorite: "true")
 
   def remove_all_favorites
     @pets = Pet.all

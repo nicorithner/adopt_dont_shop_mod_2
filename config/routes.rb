@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/pets/:id/edit', to: 'pets#edit'
   patch '/pets/:id', to: 'pets#update'
   delete '/pets/:id', to: 'pets#destroy'
-  
+
   #favorites
   resources :pets do
     member do
@@ -38,5 +38,9 @@ Rails.application.routes.draw do
   get '/reviews/:id/edit', to: 'reviews#edit'
   patch '/reviews/:id', to: 'reviews#update'
   delete '/reviews/:id', to: 'reviews#destroy'
+
+  #adopt
+  get '/pets/:id/adopt', to: 'pets#adopt'
+  post '/favorites/adopt', to: 'app#create'
 
 end
