@@ -46,6 +46,10 @@ class PetsController < ApplicationController
 
   def adopt
     @favorites = Pet.where(favorite: "true")
+
+  def remove_all_favorites
+    @pets = Pet.all
+    @pets.total_favorites.map {|pet| pet.update(favorite: !pet.favorite)}
   end
 
   private
