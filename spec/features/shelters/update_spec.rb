@@ -26,16 +26,16 @@ RSpec.describe "Shelter Update" do
   
   it "When updating a new shelter there is a flash message if there are blank fields in the form" do
     
-    visit "/shelters/#{@shelter1.id}"
+    visit "/shelters/#{@shelter_1.id}"
     click_on "Update Shelter"
     
-    expect(current_path).to eq("/shelters/#{@shelter1.id}/edit")
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
 
     fill_in :name, with: nil
     click_on "Submit Changes"
     
     expect(page).to have_content("Form incomplete")
-    expect(current_path).to eq("/shelters/#{@shelter1.id}/edit")
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
   end 
   
 end
