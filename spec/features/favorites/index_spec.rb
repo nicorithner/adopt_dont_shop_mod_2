@@ -76,4 +76,22 @@ RSpec.describe "pets index page" do
       end
     end
   end
+
+  describe "If there are No Favorites in Favorites page there is a message saying so " do
+    it "displays 'no favorites' message" do
+      visit "/favorites"
+      expect(page).to have_content("Puppy2")
+      expect(page).to have_content("Puppy3")
+      within("#pet-#{@pet_2.id}") do
+        click_link "Remove Favorite"
+      end
+      within("#pet-#{@pet_3.id}") do
+        click_link "Remove Favorite"
+      end
+      expect(page).to_not have_content("Puppy2")
+      expect(page).to_not have_content("Puppy3")
+
+      expect(page).to have_content("You haven't favorited any pets!")
+    end
+  end
 end
