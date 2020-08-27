@@ -34,17 +34,16 @@ RSpec.describe "Apply for pet" do
         choose('adopt')
       end
 
-      fill_in :name, with: "Good, not great"
-      fill_in :address, with: 3
-      fill_in :city, with: "It was alright, we weren't impressed."
-      fill_in :state, with: "here's a photo"
-      fill_in :zip, with: "here's a photo"
-      fill_in :phone_number, with: "here's a photo"
+      fill_in :name, with: "George McFly"
+      fill_in :address, with: '2778 South Yup St'
+      fill_in :city, with: "Lakewood"
+      fill_in :state, with: "CO"
+      fill_in :zip, with: 87769
+      fill_in :phone_number, with: 7205567890
       fill_in :description, with: "here's a photo"
 
       click_on "Submit Application"
       expect(current_path).to eq("/favorites")
-
   end
 
 end
