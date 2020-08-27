@@ -34,6 +34,17 @@ RSpec.describe "Apply for pet" do
         choose('adopt')
       end
 
+      fill_in :name, with: "Good, not great"
+      fill_in :address, with: 3
+      fill_in :city, with: "It was alright, we weren't impressed."
+      fill_in :state, with: "here's a photo"
+      fill_in :zip, with: "here's a photo"
+      fill_in :phone_number, with: "here's a photo"
+      fill_in :description, with: "here's a photo"
+
+      click_on "Submit Application"
+      expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews")
+
   end
 
 end
