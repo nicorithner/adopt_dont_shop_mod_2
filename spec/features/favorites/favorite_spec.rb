@@ -80,17 +80,18 @@ RSpec.describe "pets index page" do
       expect(page).to have_selector(:link_or_button, 'Favorite')
     end
 
-    # it "Favorite count in nav bar is updated after clicking 'Remove Favorite' link" do
-    #   visit "/pets/#{@pet_1.id}"
-    #   click_on "Remove Favorite"
-    #   @pet_1.reload
+    it "Favorite count in nav bar is updated after clicking 'Remove Favorite' link" do
+      visit "/pets/#{@pet_1.id}"
+      click_on "Favorite"
+      @pet_1.reload
+      click_on "Remove Favorite"
+      @pet_1.reload
 
-    #   visit "/pets"
-    #   # expect(page).to have_content("Favorite 2") ## Try the within test first
-    #   within(".topnav") do
-    #     expect(page).to have_content("Favorites: 2")
-    #   end
-    # end
+      visit "/pets"
+      within '.topnav' do
+        expect(page).to have_content("Favorite 2")
+      end
+    end
   end
 
 end
