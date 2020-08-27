@@ -36,7 +36,11 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @pet.update(favorite: !@pet.favorite)
     redirect_to("/pets/#{@pet.id}")
-    flash[:notice] = "Pet saved to favorites"
+    if @pet.favorite
+      flash[:notice] = "Pet saved to favorites"
+    else
+      flash[:notice] = "Pet Removed from favorites"
+    end
     # render :new
   end
 

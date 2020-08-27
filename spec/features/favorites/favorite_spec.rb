@@ -33,14 +33,13 @@ RSpec.describe "pets index page" do
       expect(page).to have_selector(:link_or_button, 'Favorite')
     end
 
-    it "Clicking favorite link toggles to true, remains in show page and there is a flash message confirming" do
+    it "Clicking favorite link toggles to true, visitor remains in show page and there is a flash message confirming action" do
       visit "/pets/#{@pet_1.id}"
       expect(@pet_1[:favorite]).to be_in([false])
       click_on "Favorite"
       @pet_1.reload
       expect(current_path).to eq("/pets/#{@pet_1.id}")
       expect(@pet_1[:favorite]).to be_in([true])
-      expect(@pet_1.favorite).to eq(true)
       expect(page).to have_content("Pet saved to favorites")
     end
 
@@ -50,6 +49,48 @@ RSpec.describe "pets index page" do
       @pet_1.reload
       visit "/pets"
       expect(page).to have_content("Favorite 3")
+    end
+  end
+
+  describe " When a pet is favorited, in pet's show page there's a 'Remove Favorite' link and not 'Favorite' link" do
+
+    it "It has 'Remove Favorite' link" do
+      visit "/pets/#{@pet_1.id}"
+      click_on "Favorite"
+      @pet_1.reload
+      
+      expect(page).to have_selector(:link_or_button, "Remove Favorite")
+      within '.links' do
+      expect(page).to_not have_button("Favorite")
+      end
+    end
+
+    it "Clicking 'Remove Favorite' link toggles ':favorite' to false, visitor remains in show page and there is a flash message confirming action" do
+      visit "/pets/#{@pet_1.id}"
+      click_on "Favorite"
+      @pet_1.reload
+      expect(@pet_1[:favorite]).to be_in([true])
+
+      click_on "Remove Favorite"
+      @pet_1.reload
+      expect(current_path).to eq("/pets/#{@pet_1.id}")
+      expect(@pet_1[:favorite]).to be_in([false])
+      expect(page).to have_content("Pet Removed from favorites")
+
+      expect(page).to have_selector(:link_or_button, 'Favorite')
+    end
+
+    it "Favorite count in nav bar is updated after clicking 'Remove Favorite' link" do
+      visit "/pets/#{@pet_1.id}"
+      click_on "Favorite"
+      @pet_1.reload
+      click_on "Remove Favorite"
+      @pet_1.reload
+
+      visit "/pets"
+      within '.topnav' do
+        expect(page).to have_content("Favorite 2")
+      end
     end
   end
 
