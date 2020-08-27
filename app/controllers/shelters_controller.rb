@@ -15,8 +15,12 @@ class SheltersController < ApplicationController
       zip: params[:shelter][:zip]
       })
 
-    shelter.save
-    redirect_to '/shelters'
+    if shelter.save
+      redirect_to '/shelters'
+    else 
+      flash[:error] = "Incomplete form."
+      redirect_to request.referrer
+    end
   end
 
   def show
@@ -29,8 +33,12 @@ class SheltersController < ApplicationController
 
   def update
     shelter = Shelter.find(params[:id])
-    shelter.update(shelter_params)
-    redirect_to("/shelters/#{shelter.id}")
+    if shelter.update(shelter_params)
+      redirect_to("/shelters/#{shelter.id}")
+    else 
+      flash[:error] = "Incomplete form."
+      redirect_to request.referrer
+    end
   end
 
   def destroy
