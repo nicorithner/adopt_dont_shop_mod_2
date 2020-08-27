@@ -45,5 +45,20 @@ RSpec.describe "Apply for pet" do
       click_on "Submit Application"
       expect(current_path).to eq("/favorites")
   end
+  # it "When I apply for a pet and fail to fill out any of the fields I'm redirected back to new application with a flash message" do
+  #   visit "/pets/#{@pet_1.id}/adopt"
+  #
+  #   fill_in :address, with: '2778 South Yup St'
+  #   fill_in :city, with: "Lakewood"
+  #   fill_in :state, with: "CO"
+  #   fill_in :zip, with: 87769
+  #   fill_in :phone_number, with: 7205567890
+  #   fill_in :description, with: "here's a photo"
+  #
+  #     click_on 'Submit Application'
+  #
+  #     expect(page).to have_content("Application not submitted: Required information missing")
+  #     expect(page).to have_button('Submit Application')
+  # end
 
 end

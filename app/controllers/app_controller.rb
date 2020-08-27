@@ -2,13 +2,13 @@ class AppController < ApplicationController
 
   def create
      @application = App.new(app_params)
-     @application.save
-     # if review.save
+     @pets = Pet.all
+     if @application.save
        redirect_to("/favorites")
-     # else
-     #   flash[:notice] = "Review not created: Required information missing"
-     #   render :new
-     # end
+     else
+       flash[:notice] = "Application not submitted: Required information missing"
+       redirect_to("/favorites/:id/adopt")
+     end
    end
 
    private
