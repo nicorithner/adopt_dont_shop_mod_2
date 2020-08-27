@@ -120,7 +120,7 @@ And I also see that the favorites indicator has decremented by 1
 
 
 ### User Story 14, No Favorites Page
-- [ ] done
+- [x] done
 
 As a visitor
 When I have not added any pets to my favorites list

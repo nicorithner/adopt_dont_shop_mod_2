@@ -8,8 +8,15 @@
   </head>
 
   <body>
+    
+    <% if @favorites.empty? %>
+    <br>
+    <%= "You haven't favorited any pets" %>
+    <br>
 
-    <div class="grid-pet-container}">
+    <% else %>
+
+      <div class="grid-pet-container}">
         <% @favorites.each do |pet| %>
           <div id= <%= "pet-#{pet.id}" %>>
             <%= image_tag(pet.image, alt: pet.name, class: "pet-index-image") %>
@@ -18,6 +25,8 @@
           </div>
         <%end%>
       </div>
-      
+
+    <% end %>
+
   </body>
 </html>
