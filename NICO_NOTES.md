@@ -113,9 +113,9 @@ And I also see that the favorites indicator has decremented by 1
 #### Notes & To_do
   - [x] Set up tests
     When I have added pets to my favorites list
-    - [] visit my favorites page and a 'remove favorite' link is visible next to EACH pet.
-    - [] Clicking 'Remove Favorite' a delete request is sent to "/favorites/:pet_id".
-      - [] After clicking remain in Favorites page.
+    - [x] visit my favorites page and a 'remove favorite' link is visible next to EACH pet.
+    - [x] Clicking 'Remove Favorite' a delete request is sent to "/favorites/:pet_id".
+      - [x] After clicking remain in Favorites page.
       - [] Favorites count decreased by one.
 
 
