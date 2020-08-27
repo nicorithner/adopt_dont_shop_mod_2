@@ -6,7 +6,7 @@ class CreateApps < ActiveRecord::Migration[5.2]
       t.string :city
       t.string :state
       t.integer :zip
-      t.integer :phone_number
+      t.string :phone_number
       t.string :description
     end
   end
