@@ -91,10 +91,10 @@ And I also see that my favorites indicator has decremented by 1
     After a pet is favorited
     - [x] visit page show page the Favorite link is no longer visible.
     - [x] Remove Favorite link is visible instead.
-    - [] Clicking Remove Favorite a delete request is sent to "/favorites/:pet_id".
-      - [] After clicking remain in pet's show page.
-      - [] Flash message indicating pet was removed from favorites.
-      - [] Favorite link is visible again.
+    - [x] Clicking Remove Favorite a delete request is sent to "/favorites/:pet_id".
+      - [x] After clicking remain in pet's show page.
+      - [x] Flash message indicating pet was removed from favorites.
+      - [x] Favorite link is visible again.
       - [] Favorites count decreased by one.
 
 

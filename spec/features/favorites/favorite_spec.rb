@@ -65,18 +65,20 @@ RSpec.describe "pets index page" do
       end
     end
 
-    # it "Clicking 'Remove Favorite' link toggles ':favorite' to false, visitor remains in show page and there is a flash message confirming action" do
-    #   visit "/pets/#{@pet_1.id}"
-    #   expect(@pet_1[:favorite]).to be_in([true])
+    it "Clicking 'Remove Favorite' link toggles ':favorite' to false, visitor remains in show page and there is a flash message confirming action" do
+      visit "/pets/#{@pet_1.id}"
+      click_on "Favorite"
+      @pet_1.reload
+      expect(@pet_1[:favorite]).to be_in([true])
 
-    #   click_on "Remove Favorite"
-    #   @pet_1.reload
-    #   expect(current_path).to eq("/pets/#{@pet_1.id}")
-    #   expect(@pet_1[:favorite]).to be_in([false])
-    #   expect(page).to have_content("Pet Removed from favorites")
+      click_on "Remove Favorite"
+      @pet_1.reload
+      expect(current_path).to eq("/pets/#{@pet_1.id}")
+      expect(@pet_1[:favorite]).to be_in([false])
+      expect(page).to have_content("Pet Removed from favorites")
 
-    #   expect(page).to have_selector(:link_or_button, 'Favorite')
-    # end
+      expect(page).to have_selector(:link_or_button, 'Favorite')
+    end
 
     # it "Favorite count in nav bar is updated after clicking 'Remove Favorite' link" do
     #   visit "/pets/#{@pet_1.id}"
