@@ -73,7 +73,7 @@ I am taken to the favorites index page
 
 
 ### User Story 12, Can't Favorite a Pet More Than Once
-- [ ] done
+- [x] done
 
 As a visitor
 After I've favorited a pet
@@ -95,7 +95,7 @@ And I also see that my favorites indicator has decremented by 1
       - [x] After clicking remain in pet's show page.
       - [x] Flash message indicating pet was removed from favorites.
       - [x] Favorite link is visible again.
-      - [] Favorites count decreased by one.
+      - [x] Favorites count decreased by one.
 
 
 ### User Story 13, Remove a Favorite from Favorites Page
