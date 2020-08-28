@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    
+
     <% if @favorites.empty? %>
     <br>
     <%= "You haven't favorited any pets" %>
@@ -23,7 +23,7 @@
             <nav class="name"> <h1><a href="/pets/<%= pet.id %>"><%= pet.name %></a></h1></nav>
             <ul><%= link_to "Remove Favorite", toogle_favorite_pet_path(pet),  method: :patch %></ul>
             <nav>
-              <ul><%= link_to "Adopt #{pet.name}", "/pets/#{pet.id}/adopt" %></ul>
+              <ul><%= link_to "Adopt Pets", "/favorites/adopt" %></ul>
             </nav>
           </div>
         <%end%>

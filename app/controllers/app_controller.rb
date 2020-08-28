@@ -7,7 +7,7 @@ class AppController < ApplicationController
        redirect_to("/favorites")
      else
        flash[:notice] = "Application not submitted: Required information missing"
-       redirect_to("/pets/:id/adopt")
+       redirect_to("/favorites/adopt")
      end
    end
 

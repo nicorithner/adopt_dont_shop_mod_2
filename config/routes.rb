@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   get '/favorites', to: 'favorites#index'
   delete '/favorites', to: 'pets#remove_all_favorites'
- 
+
   #reviews
   get '/shelters/:shelter_id/reviews/new', to: 'reviews#new'
   post '/shelters/:shelter_id/reviews', to: 'reviews#create'
@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   delete '/reviews/:id', to: 'reviews#destroy'
 
   #adopt
-  get '/pets/:id/adopt', to: 'pets#adopt'
+  get '/favorites/adopt', to: 'pets#adopt'
   post '/favorites/adopt', to: 'app#create'
 
 end
