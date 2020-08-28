@@ -1,34 +1,26 @@
-<% @favorites.each do |pet| %>
-  <div class="pets" id="<%=pet.name%>">
-    <input type="radio" id="adopt" value="adopt" name="adopt"> Adopt me!</input>
-    <br><br>
-    <p> <%= pet.name %></p>
-  <% end %>
-</div>
+<%= form_tag "/favorites/adopt" do %>
+<%= label_tag "Choose what pets you’d like to adopt:" %><br>
+  <% @favorites.each do |fav| %>
+    <br>
+    <div class="check-box" id="<%= fav.id %>">
+      <%= check_box "pets", nil, {:mulitple => true}, fav.id, nil %>
+      <%= label_tag fav.name %>
+    </div>
+  <% end %><br>
+<%= label_tag "Your Name:" %><br>
+<%= text_field_tag :name %><br><br>
+<%= label_tag "Your Address:" %><br>
+<%= text_field_tag :address %><br><br>
+<%= label_tag "Your City:" %>  <br>
+<%= text_field_tag :city %><br>
+<%= label_tag "Your State:" %><br>
+<%= text_field_tag :state %><br><br>
 
-<div class="child">
-  <h1>Application form</h1>
-
-  <div class="form-container">
-
-    <%= form_tag "/favorites/adopt" do %>
-      <%= label_tag :name %><br/>
-      <%= text_field_tag :name %><br/>
-      <%= label_tag :address %><br/>
-      <%= text_field_tag :address %><br/>
-      <%= label_tag :city %> <br/>
-      <%= text_field_tag :city %> <br/>
-      <%= label_tag :state %> <br/>
-      <%= text_field_tag :state %><br/>
-      <%= label_tag :zip %><br/>
-      <%= number_field_tag :zip %><br/>
-      <%= label_tag :phone_number %> <br/>
-      <%= text_field_tag :phone_number %><br/>
-      <%= label_tag :description %> <br/>
-      <%= text_area_tag :description %><br/>
-
-      <br>
-      <%= submit_tag "Submit Application" %>
-    <% end %>
-  </div>
-</div>
+<%= label_tag "Your Zip Code:" %><br>
+<%= text_field_tag :zip,  nil, maxlength: 5 %><br><br>
+<%= label_tag "Your Phone Number:" %>  <br>
+<%= text_field_tag :phone_number %><br><br>
+<%= label_tag "Description:" %>  <br>
+<%= text_area_tag :description %><br><br>
+<%= submit_tag "Adopt!" %>
+<% end %>
