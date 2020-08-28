@@ -6,6 +6,7 @@ class AppController < ApplicationController
      pet = Pet.where(params[:id] = ids)
      if @application.save
        pet.each{ |pet| pet.update(favorite: !pet.favorite)}
+       pets = pet.each{ |pet| pet.update(application_pending: true)}
        redirect_to("/favorites")
      else
        flash[:notice] = "Application not submitted: Required information missing"
