@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="style.css">
   </head>
 <body>
-   <div class="pets_container">
+  <div class="pets_container">
       
-     <main>
+    <main>
         <div class="child"> 
           <h1>Available Pets</h1>
 
@@ -18,7 +18,7 @@
             <% @pets.each do |pet| %>
 
               <div class="grid-pet-container pet">
-               <div class="banner-grid_item"></div>
+                <div class="banner-grid_item"></div>
 
                 <%= image_tag(pet.image, alt: pet.name, class: "pet-index-image") %>
 
