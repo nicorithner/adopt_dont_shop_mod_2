@@ -83,27 +83,28 @@ RSpec.describe "Apply for pet" do
     expect(page).to have_content("Application not submitted: Required information missing")
   end
 
-  # it "And I'm taken back to my favorites page where I no longer see the pets for which I just applied listed as favorites" do
-  #   visit "/pets/#{@pet_1.id}"
-  #
-  #   expect(@pet_1[:favorite]).to be_in([false])
-  #
-  #   click_on "Favorite"
-  #   @pet_1.reload
-  #
-  #   visit "/favorites/adopt"
-  #
-  #   fill_in :address, with: '2778 South Yup St'
-  #   fill_in :city, with: "Lakewood"
-  #   fill_in :state, with: "CO"
-  #   fill_in :zip, with: 87769
-  #   fill_in :phone_number, with: 7205567890
-  #   fill_in :description, with: "here's a photo"
-  #
-  #     click_on 'Adopt!'
-  #     expect(current_path).to eq("/favorites")
-  #     expect(page).not_to have_content("#{@pet_1.name}")
-  #
-  # end
+  it "And I'm taken back to my favorites page where I no longer see the pets for which I just applied listed as favorites" do
+    visit "/pets/#{@pet_1.id}"
+
+    expect(@pet_1[:favorite]).to be_in([false])
+
+    click_on "Favorite"
+    @pet_1.reload
+
+    visit "/favorites/adopt"
+
+    fill_in :name, with: "Bob"
+    fill_in :address, with: '2778 South Yup St'
+    fill_in :city, with: "Lakewood"
+    fill_in :state, with: "CO"
+    fill_in :zip, with: 87769
+    fill_in :phone_number, with: 7205567890
+    fill_in :description, with: "here's a photo"
+
+      click_on 'Adopt!'
+      expect(current_path).to eq("/favorites")
+      expect(page).not_to have_content("#{@pet_1.name}")
+
+  end
 
 end
