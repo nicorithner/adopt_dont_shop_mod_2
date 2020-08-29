@@ -19,9 +19,11 @@ RSpec.describe "pets index page" do
       expect(page).to have_content("Favorite")
     end
 
-    # it "Favorite indicator shows count of fav pets" do
-    #   visit "/pets"
-    #   expect(page).to have_content("Favorite 0")
-    # end
+    it "Favorite indicator shows count of fav pets" do
+      visit "/"
+      within '.topnav' do
+      expect(page).to have_content("Favorite 0")
+      end
+    end
   end
 end
