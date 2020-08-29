@@ -19,7 +19,7 @@ A VISITOR can vote a pet as favorite, and because we have no "users", I think PE
   <!--rails generate migration add_favorite_to_pets favorite:boolean-->
 <!--rails db:migrate-->
   <!-- - [x] pet[:favorite] = false by default -->
-  - [] Favorite indicator shows count of fav pets
+  - [x] Favorite indicator shows count of fav pets
   - [x] Nav bar - with indicator - is in every page
 
 

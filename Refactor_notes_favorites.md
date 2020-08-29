@@ -2,7 +2,9 @@
 - [] Done
 
 #### Stories to refactor
-- [] Story 8
+- [x] Story 8
+  - [x] Favorite indicator shows count of fav pets
+  - [x] Nav bar - with indicator - is in every page
 - [] Story 9
 - [] Story 10
 - [] Story 11
