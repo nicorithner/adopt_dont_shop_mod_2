@@ -22,8 +22,8 @@ body {
 }*/
 header {
   background-color: white;
-  height: 5rem;
-  margin: 10rem;
+  /* height: 5rem; */
+  margin: 3rem;
 }
 .container {
   width: 100%;

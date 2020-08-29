@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
 
   def favorites
     @favorites = FavoritePet.new(session[:favorite])
-    # binding.pry
     @favorites.favorites_count
   end
 end
