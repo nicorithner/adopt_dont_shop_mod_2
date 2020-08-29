@@ -12,6 +12,13 @@
     <% if @favorites.empty? %>
     <br>
     <%= "You haven't favorited any pets" %>
+    <br><br>
+    <h1>Applications pending for: </h1>
+    <br>
+    <% @pets.each do |pet| %>
+      <p><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p>
+      <br>
+      <% end %>
     <br>
 
     <% else %>
@@ -30,6 +37,13 @@
       </div>
 
     <% end %>
+    <h1>Applications pending for: </h1>
+    <br>
+    <% @pets.each do |pet| %>
+      <p><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p>
+      <br>
+      <% end %>
+    <br>
 
     <%= link_to "Remove All Favorites", "/favorites", method: :delete %>
   </body>
