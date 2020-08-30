@@ -9,13 +9,13 @@ RSpec.describe "the Applications index page" do
     pet_3 = Pet.create(image: "golden.jpg", name: "Puppy3", age: 2, sex: "Female", shelter_id: shelter_2.id)
     pet_4 = Pet.create(image: "cat.jpg", name: "Kitten1", age: 2, sex: "Male", shelter_id: shelter_2.id)
     app_1 = App.create!(name: "Bob", city: "Denver", state: "CO", zip: 87665, phone_number: "3039997865", address: "5576 South Yup Street", description: "yup")
+    app_2 = App.create!(name: "Tim", city: "Lakewood", state: "UT", zip: 344900, phone_number: "7889007654", address: "5576 North La Road", description: "This is a description")
+
 
     ApplicationPet.create!(app: app_1, pet: pet_1)
-    # PlaylistSong.create!(song: chicken, playlist: jams)
+    ApplicationPet.create!(app: app_2, pet: pet_2)
+
     # PlaylistSong.create!(song: place, playlist: jams)
-    # PlaylistSong.create!(song: place, playlist: rock)
-    # PlaylistSong.create!(song: heaven, playlist: rock)
-    # PlaylistSong.create!(song: dont_stop, playlist: rock)
 
     visit '/applications'
 
@@ -30,10 +30,16 @@ RSpec.describe "the Applications index page" do
       expect(page).to have_content(pet_1.name)
     end
 
-    # within("#playlist-#{country.id}") do
-    #   expect(page).to have_content(country.name)
-    #   expect(page).to have_content(chicken.title)
-    # end
+    within("#application-#{app_2.id}") do
+      expect(page).to have_content(app_2.name)
+      expect(page).to have_content(app_2.city)
+      expect(page).to have_content(app_2.state)
+      expect(page).to have_content(app_2.address)
+      expect(page).to have_content(app_2.zip)
+      expect(page).to have_content(app_2.phone_number)
+      expect(page).to have_content(app_2.description)
+      expect(page).to have_content(pet_2.name)
+    end
 
   end
 end
