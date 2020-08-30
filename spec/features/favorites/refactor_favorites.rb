@@ -57,4 +57,28 @@ RSpec.describe "pets index page" do
       expect(page).to have_content("Favorite 1")
     end
   end
+
+  describe " There is a '/favorites' index page, and Favorite pets are listed there" do
+    
+    it "Pets are listed at '/favorites'" do
+      visit "/pets/#{@pet_2.id}"
+      click_on "Favorite"
+      visit "/pets/#{@pet_3.id}"
+      click_on "Favorite"
+
+      visit "/favorites"
+      expect(current_path).to eq("/favorites")
+      expect(page).to have_content("Puppy2")
+      expect(page).to have_content("Puppy3")
+    end
+
+    it "Displays pet's image and pet's name is a link to pet's show page" do
+      visit "/pets/#{@pet_2.id}"
+      click_on "Favorite"
+      visit "/favorites"
+
+      expect(page).to have_selector(:link_or_button, 'Puppy2')
+      expect(page).to have_xpath("//img['brown_puppy.jpg']")
+    end
+  end
 end
