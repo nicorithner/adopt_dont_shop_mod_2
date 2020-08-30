@@ -3,7 +3,7 @@ Users will be able to favorite a pet and keep track of pet's they're interested 
 
 
 ### User Story 8, Favorite Indicator
-- [ ] done
+- [x] done
 
 As a visitor
 I see a favorite indicator in my navigation bar
