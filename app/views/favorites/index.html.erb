@@ -13,7 +13,13 @@
         <div class="child">
           <% if @favorites.empty? %><br>
           <%="You haven't favorited any pets"%><br/>
-          
+          <h1>Applications pending for: </h1>
+          <br>
+          <% @pets.each do |pet| %>
+            <p><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p>
+            <br>
+            <% end %>
+          <br>
           <% else %>
             <div class="grid-pet-container pet">
               <div class="banner-grid_item"></div>
@@ -27,13 +33,21 @@
                     <nav><ul><%= link_to "Adopt #{pet["name"]}", "/pets/#{pet["id"]}/adopt" %></ul></nav>
                   </div>
                 <%end%>
-
               </div>
             <% end %>
+
           </div>
         </div>
 
         <%= link_to "Remove All Favorites", "/favorites", method: :delete %>
+    <% end %>
+    <h1>Applications pending for: </h1>
+    <br>
+    <% @pets.each do |pet| %>
+      <p><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p>
+      <br>
+      <% end %>
+    <br>
 
       </main>
     </div>

@@ -1,0 +1,3 @@
+ <% @app.each do |apps| %>
+  <h2><%= link_to "#{apps.name}", "/applications/#{apps.id}" %></h2>
+    <% end %>
