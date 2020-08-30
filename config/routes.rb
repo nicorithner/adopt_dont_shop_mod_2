@@ -22,9 +22,9 @@ Rails.application.routes.draw do
   delete '/pets/:id', to: 'pets#destroy'
 
   #favorites
-  resources :pets do
+  resources :favorites do
     member do
-      patch :toogle_favorite
+      patch :add_favorite
     end
   end
 
