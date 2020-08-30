@@ -49,12 +49,12 @@ RSpec.describe "the Applications index page" do
 
               visit "/pets/#{pet_1.id}"
 
-              within("#pet-#{pet_1.id}") do
-                expect(page).to have_link("View all applicants for this pet")
+              within("#links") do
+                expect(page).to have_link("View all applications for #{pet_1.name}")
               end
 
-              within("#pet-#{pet_1.id}") do
-                click_link "View all applicants for this pet"
+              within("#links") do
+                click_link "View all applications for #{pet_1.name}"
               end
               expect(current_path).to eq("/pets/#{pet_1.id}/applications")
 

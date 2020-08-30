@@ -5,7 +5,6 @@ class AppController < ApplicationController
        state: app_params[:state], zip: app_params[:zip], phone_number: app_params[:phone_number], description: app_params[:description]})
      ids = app_params[:pets]
      pet = Pet.where(id: (ids.map{ |id| id}))
-
      pet.each{ |pets| @application = ApplicationPet.create!(app: app, pet: pets)}
      if app.save
        pet.each{ |pet| pet.update(favorite: !pet.favorite)}
@@ -23,6 +22,10 @@ class AppController < ApplicationController
 
    def show
      @app = App.find(params[:id])
+   end
+
+   def show_apps
+     @app = Pet.find(params[:id]).apps
    end
 
    private
