@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :favorites do
     member do
       patch :add_favorite
+      patch :remove_favorite
     end
   end
 
