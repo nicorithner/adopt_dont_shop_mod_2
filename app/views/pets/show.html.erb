@@ -31,11 +31,10 @@
               <ul><%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %></ul>
               <ul><%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %></ul>
               <!--Favorite toggle button here-->
-
-              <% if @pet.favorite%>
-                <%= link_to "Remove Favorite", toogle_favorite_pet_path(@pet),  method: :patch %>
+              <% if @favorites.favorited?(@pet)%>
+                <%= link_to "Remove Favorite", add_favorite_favorite_path(@pet),  method: :patch %>
               <%else%>
-                <%= link_to "Favorite", toogle_favorite_pet_path(@pet),  method: :patch %>
+                <%= link_to "Favorite", add_favorite_favorite_path(@pet),  method: :patch %>
               <%end%>
 
             </nav>
