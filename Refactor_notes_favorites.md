@@ -8,8 +8,8 @@
 - [x] Story 9
   - [x] "It has favorite link"
   - [x] "Clicking the favorite link adds a pet to favorites"
-  - [] "Pet shows in favorites page"
-  - [] "Favorite pets count on top nav increases"
+  - [x] "Pet shows in favorites page"
+  - [x] "Favorite pets count on top nav increases"
 - [] Story 10
 - [] Story 11
 - [] Story 12
