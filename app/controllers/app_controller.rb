@@ -16,6 +16,10 @@ class AppController < ApplicationController
      end
    end
 
+   def index
+     @app = App.all
+   end
+
    private
    def app_params
      params.permit!
