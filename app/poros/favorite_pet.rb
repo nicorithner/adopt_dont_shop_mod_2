@@ -15,4 +15,8 @@ class FavoritePet
   def favorites_count
     @favorites.count
   end
+
+  def favorited?(pet)
+    @favorites.include?(pet.id.to_s)
+  end
 end
