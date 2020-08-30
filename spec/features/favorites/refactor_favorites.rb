@@ -125,4 +125,32 @@ RSpec.describe "pets index page" do
       end
     end
   end
+
+  describe "If there are No Favorites in Favorites page there is a message saying so " do
+    it "displays 'no favorites' message" do
+      visit "/favorites"
+      expect(page).to have_content("You haven't favorited any pets")
+    end
+  end
+
+  describe "A 'Remove All Favorites' link removes all pets from favorites once clicked. This displays a message that no pets have been favorited and reduces favorites count to zero" do
+    it "'Remove All Favorites' link function" do
+      visit "/favorites"
+      expect(page).to have_content("Puppy2")
+      expect(page).to have_content("Puppy3")
+      expect(page).to have_link("Remove All Favorites")
+
+      click_link "Remove All Favorites"
+      
+      visit "/favorites"
+
+      expect(page).to_not have_content("Puppy2")
+      expect(page).to_not have_content("Puppy3")
+      expect(page).to have_content("You haven't favorited any pets")
+
+      within '.topnav' do
+        expect(page).to have_content("Favorite 0")
+      end
+    end
+  end
 end
