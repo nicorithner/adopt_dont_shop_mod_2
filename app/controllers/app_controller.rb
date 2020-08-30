@@ -16,6 +16,14 @@ class AppController < ApplicationController
      end
    end
 
+   def index
+     @app = App.all
+   end
+
+   def show
+     @app = App.find(params[:id])
+   end
+
    private
    def app_params
      params.permit!
