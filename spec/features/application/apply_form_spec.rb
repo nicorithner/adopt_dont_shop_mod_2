@@ -74,7 +74,6 @@ RSpec.describe "Apply for pet" do
       check
     end
 
-
     fill_in :address, with: "2778 South Yup St"
     fill_in :city, with: "Lakewood"
     fill_in :state, with: "CO"
