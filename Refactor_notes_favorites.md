@@ -12,10 +12,10 @@
   - [x] "Favorite pets count on top nav increases"
 - [x] Story 10
 - [x] Story 11
-- [] Story 12
-- [] Story 13
-- [] Story 14
-- [] Story 15
+- [x] Story 12
+- [x] Story 13
+- [x] Story 14
+- [x] Story 15
 
 #### Make sure to
 - [] Review and assess before changing.

@@ -129,7 +129,7 @@ I see text saying that I have no favorited pets
 
 
 ### User Story 15, Remove all Favorite from Favorites Page
-- [ ] done
+- [x] done
 
 As a visitor
 When I have added pets to my favorites list
