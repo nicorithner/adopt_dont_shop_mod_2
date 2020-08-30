@@ -22,4 +22,7 @@ class FavoritesController < ApplicationController
     redirect_to("/favorites")
   end
 
+  def remove_all_favorites
+    session_favorites.clear
+  end
 end
