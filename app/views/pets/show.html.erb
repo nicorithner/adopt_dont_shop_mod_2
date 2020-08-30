@@ -32,6 +32,10 @@
               <ul>Description: <%= @pet.description %></ul>
               <ul>Shelter: <%= @pet.shelter.name %></ul>
               <ul>Status: <%= @pet.status %></ul>
+              <% @pet.apps.each do |app| %>
+              <ul>On hold for: <b><%= app.name %></b></ul>
+              <% end %>
+
             </div>
 
             <nav class="links" id="links">

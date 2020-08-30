@@ -32,22 +32,10 @@ RSpec.describe "Approve an application" do
                 end
 
                 expect(current_path).to eq("/pets/#{pet_1.id}")
-                save_and_open_page
-                # visit "/favorites"
+                # save_and_open_page
                 expect(page).to have_content("Application approved")
                 expect(page).to have_content("#{pet_1.status}: pending")
-
-                #
-                # click_on "Adopt Pets"
-                #
-                # expect(current_path).to eq("/favorites/adopt")
-                #
-                #
-                # within("##{@pet_1.id}") do
-                #   check
-                # end
-                #
-                # expect(current_path).to eq("/favorites")
+                expect(page).to have_content("On hold for: #{app_1.name}")
               end
             end
           end
