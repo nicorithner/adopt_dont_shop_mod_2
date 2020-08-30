@@ -10,8 +10,8 @@
   - [x] "Clicking the favorite link adds a pet to favorites"
   - [x] "Pet shows in favorites page"
   - [x] "Favorite pets count on top nav increases"
-- [] Story 10
-- [] Story 11
+- [x] Story 10
+- [x] Story 11
 - [] Story 12
 - [] Story 13
 - [] Story 14
