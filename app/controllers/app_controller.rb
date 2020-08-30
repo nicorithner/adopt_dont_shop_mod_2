@@ -20,6 +20,10 @@ class AppController < ApplicationController
      @app = App.all
    end
 
+   def show
+     @app = App.find(params[:id])
+   end
+
    private
    def app_params
      params.permit!
