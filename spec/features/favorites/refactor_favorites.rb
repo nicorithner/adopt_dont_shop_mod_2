@@ -26,4 +26,35 @@ RSpec.describe "pets index page" do
       end
     end
   end
+
+  describe "Favorite toggle link in pet's show page" do
+
+    it "It has favorite link" do
+      visit "/pets/#{@pet_1.id}"
+      expect(page).to have_selector(:link_or_button, 'Favorite')
+    end
+
+    it "Visting Favorites index if empty a there is a message saying there are no favorited pets" do
+      visit "/favorites"
+      expect(page).to_not have_content("#{@pet_1.name}")
+    end
+
+    it "Clicking favorite adds pet to favorites, visitor remains in show page and there is a flash message confirming action" do
+      visit "/pets/#{@pet_1.id}"
+      click_on "Favorite"
+      expect(page).to have_content("Pet saved to favorites")
+      expect(current_path).to eq("/pets/#{@pet_1.id}")
+
+      visit "/favorites"
+      expect(page).to have_content("#{@pet_1.name}")
+    end 
+
+    # it "Favorite count in nav bar is updated after clicking fav link" do
+    #   visit "/pets/#{@pet_1.id}"
+    #   click_on "Favorite"
+    #   @pet_1.reload
+    #   visit "/pets"
+    #   expect(page).to have_content("Favorite 3")
+    # end
+  end
 end
