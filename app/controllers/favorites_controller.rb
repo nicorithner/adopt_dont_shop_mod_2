@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = Favorite_pet.new(session[:favorite])
-    @favorites.all
+    @favorites = FavoritePet.new(session[:favorite])
+    @favorites.favorites
   end
 end
