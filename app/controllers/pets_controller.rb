@@ -5,7 +5,6 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
-    @favorites = FavoritePet.new(session[:favorite])
   end
 
   def new
