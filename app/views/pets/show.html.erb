@@ -31,8 +31,8 @@
               <ul><%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %></ul>
               <ul><%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %></ul>
               <!--Favorite toggle button here-->
-              <% if @favorites.favorited?(@pet)%>
-                <%= link_to "Remove Favorite", add_favorite_favorite_path(@pet),  method: :patch %>
+              <% if session_favorites.include?(@pet)%>
+                <%= link_to "Remove Favorite", remove_favorite_favorite_path(@pet.id),  method: :patch %>
               <%else%>
                 <%= link_to "Favorite", add_favorite_favorite_path(@pet),  method: :patch %>
               <%end%>
