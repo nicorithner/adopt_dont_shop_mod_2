@@ -1,3 +1,9 @@
- <% @app.each do |apps| %>
-  <h2><%= link_to "#{apps.name}", "/applications/#{apps.id}" %></h2>
-    <% end %>
+<% if @app.empty? %>
+<br>
+<%= "Lucky for you, there are no applications pending for this pet at the moment!" %>
+
+<% else %>
+<% @app.each do |apps| %>
+<h2><%= link_to "#{apps.name}", "/applications/#{apps.id}" %>'s application</h2>
+  <% end %>
+<% end %>

@@ -63,6 +63,16 @@ RSpec.describe "the Applications index page" do
               click_link "#{app_1.name}"
               expect(current_path).to eq("/applications/#{app_1.id}")
             end
+            describe "When I visit a pet applications index page for a pet that has no applications on them" do
+              it "I see a message saying that there are no applications for this pet yet" do
+
+                shelter_1 = Shelter.create(name: "Shelter 1", address: "123 st", city: "Denver", state: "CO", zip: 80202)
+                pet_1 = Pet.create(image: "brown_puppy.jpg", name: "Puppy1", age: 1, sex: "Male", shelter_id: shelter_1.id)
+
+                visit "/pets/#{pet_1.id}/applications"
+                expect(page).to have_content("Lucky for you, there are no applications pending for this pet at the moment!")
+              end
+            end
           end
         end
       end
