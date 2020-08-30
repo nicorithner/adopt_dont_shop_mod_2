@@ -70,9 +70,7 @@ RSpec.describe "the Applications index page" do
                 pet_1 = Pet.create(image: "brown_puppy.jpg", name: "Puppy1", age: 1, sex: "Male", shelter_id: shelter_1.id)
 
                 visit "/pets/#{pet_1.id}/applications"
-
                 expect(page).to have_content("Lucky for you, there are no applications pending for this pet at the moment!")
-
               end
             end
           end

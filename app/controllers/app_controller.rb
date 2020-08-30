@@ -28,6 +28,17 @@ class AppController < ApplicationController
      @app = Pet.find(params[:id]).apps
    end
 
+   def toggle_status
+     pet = Pet.find(params[:id])
+     pet.update(status: "pending")
+     if pet.status == "pending"
+       flash[:notice] = "Application approved"
+       redirect_to("/pets/#{pet.id}")
+     else
+       flash[:notice] = "Application not approved"
+     end
+   end
+
    private
    def app_params
      params.permit!

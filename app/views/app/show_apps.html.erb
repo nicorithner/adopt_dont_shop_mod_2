@@ -4,6 +4,6 @@
 
 <% else %>
 <% @app.each do |apps| %>
-<h2><%= link_to "#{apps.name}", "/applications/#{apps.id}" %></h2>
+<h2><%= link_to "#{apps.name}", "/applications/#{apps.id}" %>'s application</h2>
   <% end %>
 <% end %>
