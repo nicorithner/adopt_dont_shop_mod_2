@@ -29,7 +29,7 @@ RSpec.describe "Apply for pet" do
     expect(current_path).to eq("/pets/#{@pet_1.id}/adopt")
 
     # save_and_open_page
-    within("#pets_") do
+    within("#pet-#{@pet_1.id}") do
       check
     end
 
@@ -59,7 +59,7 @@ RSpec.describe "Apply for pet" do
     expect(current_path).to eq("/pets/#{@pet_1.id}/adopt")
 
 
-    within("#pets_") do
+    within("#pet-#{@pet_1.id}") do
       check
     end
     fill_in :name, with: ""
@@ -84,7 +84,7 @@ RSpec.describe "Apply for pet" do
 
     visit "/pets/#{@pet_1.id}/adopt"
 
-    within("#pets_") do
+    within("#pet-#{@pet_1.id}") do
       check
     end
 
@@ -107,14 +107,14 @@ RSpec.describe "Apply for pet" do
       expect(@pet_1[:favorite]).to be_in([false])
       click_on "Favorite"
       @pet_1.reload
-      # visit "/pets/#{@pet_2.id}"
-      # expect(@pet_2[:favorite]).to be_in([false])
-      # click_on "Favorite"
-      # @pet_2.reload
+      visit "/pets/#{@pet_2.id}"
+      expect(@pet_2[:favorite]).to be_in([false])
+      click_on "Favorite"
+      @pet_2.reload
 
       visit "/pets/#{@pet_1.id}/adopt"
-
-      within("#pets_") do
+      # save_and_open_page
+      within("#pet-#{@pet_1.id}") do
         check
       end
 
