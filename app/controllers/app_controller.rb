@@ -3,16 +3,13 @@ class AppController < ApplicationController
   def create
     app = App.new(name: app_params[:name], address: app_params[:address], city: app_params[:city], state: app_params[:state], zip: app_params[:zip], phone_number: app_params[:phone_number], description: app_params[:description])
     ids = app_params[:pets]
-    # pets = Pet.where(id: ids)
-    pets = Pet.where(id: (ids.map{ |id| id}))
+    pets = Pet.where(id: ids)
     if app.save
       pets.each do |pet|
         ApplicationPet.create!(app_id: app.id, pet_id: pet.id)
-        # require "pry"; binding.pry
-        # pet.application_pending = true
         pet.update(application_pending: true)
+        self.remove_favorite(pet)
       end
-      redirect_to("/favorites")
     else
       # require "pry"; binding.pry
       flash[:notice] = "Application not submitted: Required information missing"
@@ -22,6 +19,11 @@ class AppController < ApplicationController
 
   def index
     @app = App.all
+  end
+
+  def remove_favorite(pet)
+    session_favorites.delete(session_favorites.find {|p| pet})
+    redirect_to("/favorites")
   end
 
   def show
@@ -44,7 +46,7 @@ class AppController < ApplicationController
   end
 
   private
-  def app_params
-    params.permit!
+  def app_params #can change this back??
+    params.permit(:name, :address, :city, :state, :zip, :phone_number, :description, :pets => [])
     end
   end
