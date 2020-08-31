@@ -32,25 +32,8 @@ class PetsController < ApplicationController
     redirect_to "/pets"
   end
 
-  def toogle_favorite
-    @pet = Pet.find(params[:id])
-    @pet.update(favorite: !@pet.favorite)
-    redirect_to("/pets/#{@pet.id}")
-    if @pet.favorite
-      flash[:notice] = "Pet saved to favorites"
-    else
-      flash[:notice] = "Pet Removed from favorites"
-    end
-    # render :new
-  end
-
   def adopt
     @favorites = Pet.where(favorite: "true")
-  end
-
-  def remove_all_favorites
-    @pets = Pet.all
-    @pets.total_favorites.map {|pet| pet.update(favorite: !pet.favorite)}
   end
 
   private

@@ -8,34 +8,38 @@
   </head>
 
   <body>
+    <div class="pets_container">
+      <main>
+        <div class="child">
+          <% if @favorites.empty? %><br>
+          <%="You haven't favorited any pets"%><br/>
+          <h1>Applications pending for: </h1>
+          <br>
+          <% @pets.each do |pet| %>
+            <p><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p>
+            <br>
+            <% end %>
+          <br>
+          <% else %>
+            <div class="grid-pet-container pet">
+              <div class="banner-grid_item"></div>
+              
+                <% @favorites.each do |pet| %>
 
-    <% if @favorites.empty? %>
-    <br>
-    <%= "You haven't favorited any pets" %>
-    <br><br>
-    <h1>Applications pending for: </h1>
-    <br>
-    <% @pets.each do |pet| %>
-      <p><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p>
-      <br>
-      <% end %>
-    <br>
+                  <div id= <%= "pet-#{pet["id"]}" %>>
+                    <%= image_tag(pet["image"], alt: pet["name"], class: "pet-index-image") %>
+                    <nav class="name"> <h1><a href="/pets/<%= pet["id"] %>"><%= pet["name"] %></a></h1></nav>
+                    <ul><%= link_to "Remove Favorite", remove_favorite_favorite_path(pet["id"]),  method: :patch %></ul>
+                    <nav><ul><%= link_to "Adopt #{pet["name"]}", "/pets/#{pet["id"]}/adopt" %></ul></nav>
+                  </div>
+                <%end%>
+              </div>
+            <% end %>
 
-    <% else %>
-
-      <div class="grid-pet-container}">
-        <% @favorites.each do |pet| %>
-          <div id= <%= "pet-#{pet.id}" %>>
-            <%= image_tag(pet.image, alt: pet.name, class: "pet-index-image") %>
-            <nav class="name"> <h1><a href="/pets/<%= pet.id %>"><%= pet.name %></a></h1></nav>
-            <ul><%= link_to "Remove Favorite", toogle_favorite_pet_path(pet),  method: :patch %></ul>
-            <nav>
-              <ul><%= link_to "Adopt Pets", "/favorites/adopt" %></ul>
-            </nav>
           </div>
-        <%end%>
-      </div>
+        </div>
 
+        <%= link_to "Remove All Favorites", "/favorites", method: :delete %>
     <% end %>
     <h1>Applications pending for: </h1>
     <br>
@@ -45,6 +49,7 @@
       <% end %>
     <br>
 
-    <%= link_to "Remove All Favorites", "/favorites", method: :delete %>
+      </main>
+    </div>
   </body>
 </html>

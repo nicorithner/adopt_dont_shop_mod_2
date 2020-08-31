@@ -9,47 +9,28 @@
   </head>
 
   <body>
-   <div class="main_container">
-      <nav>
-        <a href="/">HOME</a>
-        <a href="/shelters">SHELTERS</a>
-        <a href="/pets">PETS</a>
-      </nav>
+    <div class="main_container">
+        <main>
+          <div class="child">
+            <h1>Shelters</h1><br>
 
-      <main>
-        <div class="child">
-          <h1>Shelters</h1><br>
+            <nav><%= link_to "New Shelter", "/shelters/new"%></nav>
 
-          <nav><%= link_to "New Shelter", "/shelters/new"%></nav>
-
-          <div class="grid">
-            <% @shelters.each do |shelter| %>
-              <div class="grid-item shelter">
-                <ul><h3><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h3></ul>
+            <div class="grid">
+              <% @shelters.each do |shelter| %>
+                <div class="grid-item shelter">
+                  <ul><h3><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h3></ul>
 
 
-                <nav><ul><%= link_to "Edit #{shelter.name}", "/shelters/#{shelter.id}/edit" %></ul>
-                <ul><%= link_to "Delete #{shelter.name}", "/shelters/#{shelter.id}", method: :delete %></ul>
-                <ul><%= link_to "New Review", "/shelters/#{shelter.id}/reviews/new"%></ul>
-                </nav>
-              </div>
-            <% end %>
+                  <nav><ul><%= link_to "Edit #{shelter.name}", "/shelters/#{shelter.id}/edit" %></ul>
+                  <ul><%= link_to "Delete #{shelter.name}", "/shelters/#{shelter.id}", method: :delete %></ul>
+                  <ul><%= link_to "New Review", "/shelters/#{shelter.id}/reviews/new"%></ul>
+                  </nav>
+                </div>
+              <% end %>
+            </div>
           </div>
-
-        </div>
-
-      </main>
-
-
-
-      <footer>
-          <nav>
-        <a href="#">Home</a>
-        <a href="/shelters">Shelters</a>
-        <a href="/pets">Pets</a>
-      </nav>
-        </footer>
-    </div>
-
+        </main>
+      </div>
   </body>
 </html>

@@ -22,14 +22,15 @@ Rails.application.routes.draw do
   delete '/pets/:id', to: 'pets#destroy'
 
   #favorites
-  resources :pets do
+  resources :favorites do
     member do
-      patch :toogle_favorite
+      patch :add_favorite
+      patch :remove_favorite
     end
   end
 
   get '/favorites', to: 'favorites#index'
-  delete '/favorites', to: 'pets#remove_all_favorites'
+  delete '/favorites', to: 'favorites#remove_all_favorites'
 
   #reviews
   get '/shelters/:shelter_id/reviews/new', to: 'reviews#new'

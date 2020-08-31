@@ -3,7 +3,7 @@ Users will be able to favorite a pet and keep track of pet's they're interested 
 
 
 ### User Story 8, Favorite Indicator
-- [ ] done
+- [x] done
 
 As a visitor
 I see a favorite indicator in my navigation bar
@@ -15,12 +15,12 @@ I can see this favorite indicator from any page in the application
 A VISITOR can vote a pet as favorite, and because we have no "users", I think PETS will need a column in their table to say they are a FAVORITE. 
 
   - [x] Add favorite indicator in the nav bar
-  - [x] Add column 'favorite:boolean' to  pets table
+  <!-- - [x] Add column 'favorite:boolean' to  pets table -->
   <!--rails generate migration add_favorite_to_pets favorite:boolean-->
 <!--rails db:migrate-->
-  - [x] pet[:favorite] = false by default
+  <!-- - [x] pet[:favorite] = false by default -->
   - [x] Favorite indicator shows count of fav pets
-  - [ ] Nav bar - with indicator - is in every page
+  - [x] Nav bar - with indicator - is in every page
 
 
 
@@ -129,7 +129,7 @@ I see text saying that I have no favorited pets
 
 
 ### User Story 15, Remove all Favorite from Favorites Page
-- [ ] done
+- [x] done
 
 As a visitor
 When I have added pets to my favorites list

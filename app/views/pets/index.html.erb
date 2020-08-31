@@ -8,15 +8,9 @@
     <link rel="stylesheet" href="style.css">
   </head>
 <body>
-   <div class="pets_container">
-      <nav>
-        <a href="/">HOME</a>
-        <a href="/shelters">SHELTERS</a>
-        <a href="/pets">PETS</a>
-        <a href="#">Favorite <%=@pets.favorites%></a>
-      </nav>
+  <div class="pets_container">
       
-     <main>
+    <main>
         <div class="child"> 
           <h1>Available Pets</h1>
 
@@ -24,7 +18,7 @@
             <% @pets.each do |pet| %>
 
               <div class="grid-pet-container pet">
-               <div class="banner-grid_item"></div>
+                <div class="banner-grid_item"></div>
 
                 <%= image_tag(pet.image, alt: pet.name, class: "pet-index-image") %>
 
@@ -47,13 +41,6 @@
         </div>
       </main>
 
-      <footer>
-          <nav>
-        <a href="#">Home</a>
-        <a href="/shelters">Shelters</a>
-        <a href="/pets">Pets</a>
-      </nav>
-        </footer>
     </div>
 
   </body>
