@@ -10,30 +10,21 @@ RSpec.describe "Apply for pet" do
     @pet_2 = Pet.create(image: "english_bulldog.jpg", name: "Puppy2", age: 1, sex: "Female", shelter_id: @shelter_1.id, favorite: false, application_pending: false)
     @pet_3 = Pet.create(image: "golden.jpg", name: "Puppy3", age: 2, sex: "Female", shelter_id: @shelter_2.id, favorite: false, application_pending: false)
     @pet_4 = Pet.create(image: "cat.jpg", name: "Kitten1", age: 2, sex: "Male", shelter_id: @shelter_2.id, favorite: false, application_pending: false)
+    @pet_5 = Pet.create(image: "cat.jpg", name: "Kitten2", age: 20, sex: "Male", shelter_id: @shelter_2.id, favorite: true, application_pending: false)
+
   end
 
   it "When I have added pets to my favorites list" do
-    visit "/pets/#{@pet_1.id}"
-
-    expect(@pet_1[:favorite]).to be_in([false])
-
-    click_on "Favorite"
-    @pet_1.reload
-
-    expect(current_path).to eq("/pets/#{@pet_1.id}")
-    expect(@pet_1[:favorite]).to be_in([true])
-    expect(@pet_1.favorite).to eq(true)
-    expect(page).to have_content("Pet saved to favorites")
 
     visit "/favorites"
-    expect(page).to have_content("Puppy1")
+    expect(page).to have_content("#{@pet_5.name}")
 
     click_on "Adopt Pets"
 
-    expect(current_path).to eq("/favorites/adopt")
+    expect(current_path).to eq("/pets/#{@pet_5.id}/adopt")
 
 
-    within("##{@pet_1.id}") do
+    within("##{@pet_5.id}") do
       check
     end
 
@@ -50,24 +41,12 @@ RSpec.describe "Apply for pet" do
   end
 
   it "When I apply for a pet and fail to fill out any of the fields I'm redirected back to new application with a flash message" do
-    visit "/pets/#{@pet_1.id}"
-
-    expect(@pet_1[:favorite]).to be_in([false])
-
-    click_on "Favorite"
-    @pet_1.reload
-
-    expect(current_path).to eq("/pets/#{@pet_1.id}")
-    expect(@pet_1[:favorite]).to be_in([true])
-    expect(@pet_1.favorite).to eq(true)
-    expect(page).to have_content("Pet saved to favorites")
-
     visit "/favorites"
-    expect(page).to have_content("Puppy1")
+    expect(page).to have_content("#{@pet_5.name}")
 
     click_on "Adopt Pets"
 
-    expect(current_path).to eq("/favorites/adopt")
+    expect(current_path).to eq("/pets/#{@pet_5.id}/adopt")
 
 
     within("#pets_") do
@@ -86,16 +65,15 @@ RSpec.describe "Apply for pet" do
   end
 
   it "And I'm taken back to my favorites page where I no longer see the pets for which I just applied listed as favorites" do
-    visit "/pets/#{@pet_1.id}"
+    visit "/favorites"
+    expect(page).to have_content("#{@pet_5.name}")
 
-    expect(@pet_1[:favorite]).to be_in([false])
+    click_on "Adopt Pets"
 
-    click_on "Favorite"
-    @pet_1.reload
+    expect(current_path).to eq("/pets/#{@pet_5.id}/adopt")
 
-    visit "/favorites/adopt"
 
-    within("##{@pet_1.id}") do
+    within("#pets_") do
       check
     end
 
@@ -109,23 +87,15 @@ RSpec.describe "Apply for pet" do
 
     click_on 'Adopt!'
     expect(current_path).to eq("/favorites")
-    # expect(page).not_to have_content("#{@pet_1.name}")
+    # expect(page).not_to have_content("#{@pet_5.name}")
   end
 
   describe "After one or more applications have been created" do
     it "When I visit favorites index page I see a section on the page that has a list of all pets have have at least one application on them" do
-      visit "/pets/#{@pet_1.id}"
-      expect(@pet_1[:favorite]).to be_in([false])
-      click_on "Favorite"
-      @pet_1.reload
-      visit "/pets/#{@pet_2.id}"
-      expect(@pet_2[:favorite]).to be_in([false])
-      click_on "Favorite"
-      @pet_2.reload
 
-      visit "/favorites/adopt"
+      visit "/pets/#{@pet_5.id}/adopt"
 
-      within("##{@pet_1.id}") do
+      within("#pets_") do
         check
       end
 
@@ -139,7 +109,7 @@ RSpec.describe "Apply for pet" do
 
       click_on 'Adopt!'
       visit "/favorites"
-      expect(page).to have_content("Applications pending for:\n#{@pet_1.name}")
+      expect(page).to have_content("Applications pending for:\n#{@pet_5.name}")
 
     end
   end

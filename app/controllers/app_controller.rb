@@ -6,11 +6,9 @@ class AppController < ApplicationController
       ids = app_params[:pets]
       pets = Pet.where(id: ids)
       # pet = Pet.where(id: (ids.map{ |id| id}))
-
       pets.each do |pet|
         ApplicationPet.create!(app_id: app.id, pet_id: pet.id)
         pet.update!(favorite: false, application_pending: true)
-        # require "pry"; binding.pry
       end
     end
     # pets.each{ |pet| pet.update(application_pending: true)}

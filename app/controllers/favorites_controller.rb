@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
 
   def index
-    @favorites = session_favorites
+    # @favorites = session_favorites
      @favorites = Pet.where(favorite: "true")
     @pets = Pet.where(application_pending: "true")
   end
@@ -16,6 +16,10 @@ class FavoritesController < ApplicationController
     else
       flash[:notice] = "Pet Removed from favorites"
     end
+  end
+
+  def show
+    @favorites = Pet.where(favorite: true)
   end
 
   def remove_favorite

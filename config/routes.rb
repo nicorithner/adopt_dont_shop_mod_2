@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   delete '/reviews/:id', to: 'reviews#destroy'
 
   #adopt
-  get '/favorites/adopt', to: 'pets#adopt'
+  get '/favorites/adopt', to: 'favorites#index'
   post '/favorites/adopt', to: 'app#create'
 
   #applications
@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   get '/applications/:id', to: 'app#show'
   get '/pets/:id/applications', to: 'app#show_apps'
   post '/pets/:id/applications/approve', to: 'app#toggle_status'
+  get '/pets/:id/adopt', to: 'pets#adopt'
 
 
   resources :app do
