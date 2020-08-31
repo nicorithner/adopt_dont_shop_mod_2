@@ -1,23 +1,23 @@
 class AppController < ApplicationController
 
   def create
-    ActiveRecord::Base.transaction do #for db stuff only, keep redirect out
-      app = App.create!(name: app_params[:name], address: app_params[:address], city: app_params[:city], state: app_params[:state], zip: app_params[:zip], phone_number: app_params[:phone_number], description: app_params[:description])
-      ids = app_params[:pets]
-      pets = Pet.where(id: ids)
-      # pet = Pet.where(id: (ids.map{ |id| id}))
-
+    app = App.new(name: app_params[:name], address: app_params[:address], city: app_params[:city], state: app_params[:state], zip: app_params[:zip], phone_number: app_params[:phone_number], description: app_params[:description])
+    ids = app_params[:pets]
+    # pets = Pet.where(id: ids)
+    pets = Pet.where(id: (ids.map{ |id| id}))
+    if app.save
       pets.each do |pet|
         ApplicationPet.create!(app_id: app.id, pet_id: pet.id)
-        pet.update!(favorite: false, application_pending: true)
         # require "pry"; binding.pry
+        # pet.application_pending = true
+        pet.update(application_pending: true)
       end
+      redirect_to("/favorites")
+    else
+      # require "pry"; binding.pry
+      flash[:notice] = "Application not submitted: Required information missing"
+        redirect_to("/pets/#{Pet.last.id}/adopt")
     end
-    # pets.each{ |pet| pet.update(application_pending: true)}
-    redirect_to("/favorites")
-  rescue => error #add more sad path testing, pet doesn't exist, etc. Make sure redirect works
-    flash[:notice] = "Application not submitted: Required information missing"
-    redirect_to("/favorites/adopt")
   end
 
   def index
@@ -45,7 +45,6 @@ class AppController < ApplicationController
 
   private
   def app_params
-    params.permit(:name, :address, :city,
-      :state, :zip, :phone_number, :description, :pets => [])
+    params.permit!
     end
   end

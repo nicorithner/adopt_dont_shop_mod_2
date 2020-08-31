@@ -13,7 +13,7 @@
         <div class="child">
           <% if @favorites.empty? %><br>
             <%="You haven't favorited any pets"%><br/>
-            <h1>Applications pending for: </h1>
+            <h1>Applications pending for: none</h1>
             <br>
             <% @pets.each do |pet| %>
               <p><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p>
@@ -28,9 +28,16 @@
                     <%= image_tag(pet["image"], alt: pet["name"], class: "pet-index-image") %>
                     <nav class="name"> <h1><a href="/pets/<%= pet["id"] %>"><%= pet["name"] %></a></h1></nav>
                     <ul><%= link_to "Remove Favorite", remove_favorite_favorite_path(pet["id"]),  method: :patch %></ul>
-                    <nav><ul><%= link_to "Adopt #{pet["name"]}", "/pets/#{pet["id"]}/adopt" %></ul></nav>
+                    <nav><ul><%= link_to "Adopt Pets", "/pets/#{pet["id"]}/adopt" %></ul></nav>
                   </div>
                 <%end%>
+                <h1>Applications pending for:</h1>
+                <%pets_pending = @pets.select do |pet| %>
+                <% pet.application_pending == true %>
+                <% end %>
+                <% pets_pending.each do |pet| %>
+                <%= pet.name %>
+                <% end %>
               </div>
             </div>
           <% end %>

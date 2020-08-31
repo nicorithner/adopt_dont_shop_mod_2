@@ -1,10 +1,10 @@
-<%= form_tag "/favorites/adopt" do %>
+<%= form_tag "/pets/:id/adopt" do %>
 <%= label_tag "Choose what pets you’d like to adopt:" %><br>
   <% @favorites.each do |fav| %>
     <br>
-    <div class="check-box" id="<%= fav.id %>">
-      <%= check_box "pets", nil, {:mulitple => true}, fav.id, nil %> #last nil is value if it's unchecked
-      <%= label_tag fav.name %>
+    <div class="check-box">
+      <%= check_box "pets", nil, {:mulitple => true}, "#{fav["id"]}", nil %>
+      <%= label_tag fav["name"] %>
     </div>
   <% end %><br>
 <%= label_tag "Your Name:" %><br>
