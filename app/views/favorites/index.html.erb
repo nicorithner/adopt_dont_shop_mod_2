@@ -12,20 +12,18 @@
       <main>
         <div class="child">
           <% if @favorites.empty? %><br>
-          <%="You haven't favorited any pets"%><br/>
-          <h1>Applications pending for: </h1>
-          <br>
-          <% @pets.each do |pet| %>
-            <p><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p>
+            <%="You haven't favorited any pets"%><br/>
+            <h1>Applications pending for: </h1>
             <br>
-            <% end %>
-          <br>
+            <% @pets.each do |pet| %>
+              <p><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p>
+              <br>
+              <% end %>
+              <br>
           <% else %>
             <div class="grid-pet-container pet">
               <div class="banner-grid_item"></div>
-              
                 <% @favorites.each do |pet| %>
-
                   <div id= <%= "pet-#{pet["id"]}" %>>
                     <%= image_tag(pet["image"], alt: pet["name"], class: "pet-index-image") %>
                     <nav class="name"> <h1><a href="/pets/<%= pet["id"] %>"><%= pet["name"] %></a></h1></nav>
@@ -34,21 +32,11 @@
                   </div>
                 <%end%>
               </div>
-            <% end %>
-
-          </div>
+            </div>
+          <% end %>
         </div>
 
         <%= link_to "Remove All Favorites", "/favorites", method: :delete %>
-    <% end %>
-    <h1>Applications pending for: </h1>
-    <br>
-    <% @pets.each do |pet| %>
-      <p><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p>
-      <br>
-      <% end %>
-    <br>
-
       </main>
     </div>
   </body>
