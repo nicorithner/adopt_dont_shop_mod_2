@@ -6,7 +6,7 @@ class SheltersController < ApplicationController
   def new
   end
 
-  def create
+  def create #change this?
     shelter = Shelter.new({
       name: params[:shelter][:name],
       address: params[:shelter][:address],
@@ -17,7 +17,7 @@ class SheltersController < ApplicationController
 
     if shelter.save
       redirect_to '/shelters'
-    else 
+    else
       flash[:error] = "Incomplete form."
       redirect_to request.referrer
     end
@@ -35,7 +35,7 @@ class SheltersController < ApplicationController
     shelter = Shelter.find(params[:id])
     if shelter.update(shelter_params)
       redirect_to("/shelters/#{shelter.id}")
-    else 
+    else
       flash[:error] = "Incomplete form."
       redirect_to request.referrer
     end
@@ -53,7 +53,7 @@ class SheltersController < ApplicationController
   end
 
   private
-  
+
   def shelter_params
     params.permit(:name, :address, :city, :state, :zip)
   end
