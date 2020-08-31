@@ -10,6 +10,7 @@ class AppController < ApplicationController
         pet.update(application_pending: true)
         self.remove_favorite(pet)
       end
+      redirect_to("/favorites")
     else
       # require "pry"; binding.pry
       flash[:notice] = "Application not submitted: Required information missing"
@@ -21,17 +22,16 @@ class AppController < ApplicationController
     @app = App.all
   end
 
-  def remove_favorite(pet)
-    session_favorites.delete(session_favorites.find {|p| pet})
-    redirect_to("/favorites")
-  end
-
   def show
     @app = App.find(params[:id])
   end
 
   def show_apps
     @app = Pet.find(params[:id]).apps
+  end
+
+  def remove_favorite(pet)
+    session_favorites.delete(session_favorites.find {|p| pet})
   end
 
   def toggle_status
