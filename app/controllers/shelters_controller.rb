@@ -25,6 +25,8 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
+    @total_pending_applications = [@shelter.pets.where('application_pending == true')].count
+    # binding.pry
   end
 
   def edit
