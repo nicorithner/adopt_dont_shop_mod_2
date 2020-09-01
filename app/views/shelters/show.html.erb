@@ -36,6 +36,11 @@
               <% end %>
             </nav>
           </div>
+          <div class="shelter_stats">
+            <ul>Average Review: <%= @shelter.reviews.average(:rating).round %></ul>
+            <ul>Total Pets: <%= @shelter.pets.count %></ul>
+            <ul>Total Pending Applications:<%=@total_pending_applications%></ul>
+          </div>
         </div>
       </main>
     </div>
