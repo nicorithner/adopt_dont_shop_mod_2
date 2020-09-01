@@ -34,6 +34,17 @@ class AppController < ApplicationController
     session_favorites.delete(session_favorites.find {|p| pet})
   end
 
+  def toggle_status_un
+    # pet = Pet.find(params[:id])
+    app = App.find(params[:id])
+    app.pets.each do |pet|
+      if pet.application_pending == true
+        pet.update(application_pending: false)
+      end
+    end
+    redirect_to("/applications/#{app.id}")
+  end
+
   def toggle_status
     pet = Pet.find(params[:id])
     pet.update(status: "pending")

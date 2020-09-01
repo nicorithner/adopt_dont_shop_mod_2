@@ -50,6 +50,8 @@ Rails.application.routes.draw do
   get '/applications/:id', to: 'app#show'
   get '/pets/:id/applications', to: 'app#show_apps'
   post '/pets/:id/applications/approve', to: 'app#toggle_status'
+  post '/pets/:id/applications/:id/unapprove', to: 'app#toggle_status_un'
+
 
 
 

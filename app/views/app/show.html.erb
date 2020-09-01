@@ -11,6 +11,11 @@
   <h4><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h4>
   <% if pet.application_pending == true %>
   <h3><%=pet.name %> already has an application pending</h3>
+  <%= form_tag "/pets/#{pet.id}/applications/#{@app.id}/unapprove" do %>
+    <%= pet.name %>
+    <%= submit_tag "Unapprove application for #{pet.name}" %>
+    <% end %>
+
   <% else %>
   <%= form_tag "/pets/#{pet.id}/applications/approve" do %>
   <%= label_tag "Choose which applications to approve: " %><br>
