@@ -14,28 +14,15 @@
       <main>
         <div class="child">
           <h1>Add A New Pet</h1>
-            
-          <div class="form-container">
 
-            <%= form_tag "/shelters/#{@shelter_id}/pets" do %>
-              <%= label_tag :image %><br/>
-              <%= text_field_tag :image %><br/>
-              <%= label_tag :name %><br/>
-              <%= text_field_tag :name %><br/>
-              <%= label_tag :age %> <br/>
-              <%= text_field_tag :age %> <br/>
-              <%= label_tag :sex %> <br/>
-              <%= text_field_tag :sex %><br/>
-              <%= label_tag :description %><br/>
-              <%= text_area_tag :description %><br/>
-              <%= hidden_field_tag :status, "Available"%>
-              <br>
-              <%= submit_tag "Create Pet" %>
-            <% end %>
-          </div>
+            <%= render partial: 'form', locals: {
+                                                path: "/shelters/#{@shelter_id}/pets",
+                                                method: :post,
+                                                button_text: "Create Pet"
+                                              } %>
         </div>
       </main>
-      
+
     </div>
 
   </body>

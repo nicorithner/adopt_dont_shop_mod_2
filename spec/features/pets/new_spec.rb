@@ -23,7 +23,7 @@ RSpec.describe "pets index page" do
     fill_in :age, with: 1
     fill_in :sex, with: "Female"
     fill_in :description, with: "Fun and loving, high energy puppy"
-
+    save_and_open_page
     click_on "Create Pet"
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
 
