@@ -58,6 +58,6 @@ class AppController < ApplicationController
 
   private
   def app_params #can change this back??
-    params.permit(:name, :address, :city, :state, :zip, :phone_number, :description, :pets => [])
+    params.permit(:name, :address, :city, :state, :zip, :phone_number, :description, :application_pending, :pets => [])
     end
   end
