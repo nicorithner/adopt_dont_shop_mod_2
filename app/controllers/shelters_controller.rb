@@ -42,8 +42,17 @@ class SheltersController < ApplicationController
   end
 
   def destroy
-  Shelter.destroy(params[:id])
-  redirect_to '/shelters'
+    reviews = Shelter.find(params[:id]).reviews
+    if reviews.empty?
+      Shelter.destroy(params[:id])
+      redirect_to '/shelters'
+    else
+      reviews.each do |review|
+        Review.destroy(review.id)
+      end
+      Shelter.destroy(params[:id])
+      redirect_to '/shelters'
+    end
   end
 
   def pets_index
@@ -55,6 +64,6 @@ class SheltersController < ApplicationController
   private
 
   def shelter_params
-    params.permit(:name, :address, :city, :state, :zip)
+    params.permit(:name, :address, :city, :state, :zip, :reviews)
   end
 end
