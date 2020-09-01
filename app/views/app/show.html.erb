@@ -9,10 +9,15 @@
   <h3>Applicant self-description: <%= @app.description %></h3>
   <h4>Pets applying for: </h4><% @app.pets.each do |pet|  %>
   <h4><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h4>
+  <% if pet.application_pending == true %>
+  <h3><%=pet.name %> already has an application pending</h3>
+  <% else %>
   <%= form_tag "/pets/#{pet.id}/applications/approve" do %>
   <%= label_tag "Choose which applications to approve: " %><br>
     <%= pet.name %>
     <%= submit_tag "Approve application for #{pet.name}" %>
+    <% end %>
+
   <% end %>
   <% end %>
 </section>
