@@ -165,3 +165,12 @@ I see a flash message indicating which field(s) I am missing
   - [x] Set up tests
     When I am updating or creating a new shelter
   - [x] Flash message for incomplete form indicating what field(s) is missing.
+
+### User Story 30, Shelter Statistics
+- []
+As a visitor
+When I visit a shelter's show page
+I see statistics for that shelter, including:
+- [x] count of pets that are at that shelter
+- [x] average shelter review rating
+- [] number of applications on file for that shelter
