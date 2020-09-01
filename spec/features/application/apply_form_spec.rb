@@ -98,7 +98,7 @@ RSpec.describe "Apply for pet" do
 
     click_on 'Adopt!'
     expect(current_path).to eq("/favorites")
-    # expect(page).not_to have_content("#{@pet_1.name}") need to test more for this one!!!
+    # expect(page).not_to have_content("#{@pet_1.name}")
   end
 
   describe "After one or more applications have been created" do
