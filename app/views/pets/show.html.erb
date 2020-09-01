@@ -34,8 +34,12 @@
 
             <nav class="links" id="links">
               <ul><%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %></ul>
-              <ul><%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %></ul>
-              <ul><%= link_to "View all applications for #{@pet.name}", "/pets/#{@pet.id}/applications" %></ul>
+              <% if @pet.application_pending == true %>
+                <ul><%= link_to "View all applications for #{@pet.name}", "/pets/#{@pet.id}/applications" %></ul>
+                <% else %>
+                <ul><%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %></ul>
+                <ul><%= link_to "View all applications for #{@pet.name}", "/pets/#{@pet.id}/applications" %></ul>
+                <% end %>
 
               <!--Favorite toggle button here-->
               <% if session_favorites.include?(@pet)%>
