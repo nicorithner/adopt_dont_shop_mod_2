@@ -31,4 +31,19 @@ RSpec.describe "pets index page" do
     expect(page).to have_content("Available")
   end
 
+  it "if missing a field, flash message shows what field is missing" do
+    visit "/shelters/#{@shelter_1.id}/pets/new"
+
+    fill_in :image, with: "https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_960_720.jpg"
+    fill_in :name, with: ""
+    fill_in :age, with: 1
+    fill_in :sex, with: "Female"
+    fill_in :description, with: "Fun and loving, high energy puppy"
+
+    click_on "Create Pet"
+
+    expect(page).to have_content("Application incomplete: please include name")
+
+  end
+
 end
