@@ -55,7 +55,6 @@ RSpec.describe 'Shelters show page' do
       expect(page).to have_content("Great place!")
       expect(page).not_to have_content("https://i.ibb.co/YLxykRV/yak.png")
       expect(page).to have_content("We loved taking our little baby here!")
-      save_and_open_page
       expect(page).to have_content("Average Review: 4")
 
     end
