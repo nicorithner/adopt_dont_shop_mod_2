@@ -42,7 +42,6 @@ RSpec.describe "shelter show page" do
 
       expect(page).to have_content("Total Pets: 2")
       expect(page).to have_content("Average Review: 4")
-      save_and_open_page
       expect(page).to have_content("Total Pending Applications:1")
     end
   end
