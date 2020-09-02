@@ -28,7 +28,8 @@
             <nav class="links">
               <ul><%= link_to "#{@shelter.name} pets", "/shelters/#{@shelter.id}/pets" %></ul>
               <ul><a href="/shelters/<%= @shelter.id %>/edit">Update Shelter</a></ul>
-              <% if @shelter.pets.any?{ |pet| pet.application_pending == true} %>
+              
+              <% if @pending_applications.present? %>
               <ul><%= link_to "New Review", "/shelters/#{@shelter.id}/reviews/new"%></ul>
               <% else %>
               <ul><%= link_to "New Review", "/shelters/#{@shelter.id}/reviews/new"%></ul>
