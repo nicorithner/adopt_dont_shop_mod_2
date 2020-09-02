@@ -42,6 +42,9 @@ RSpec.describe 'Shelters show page' do
     @review_1 = Review.create!(title: "Great place!", rating: 5,
                               content: @content_1,
                               shelter_id: @shelter_1.id)
+    @review_2 = Review.create!(title: "Great place!", rating: 3,
+                              content: @content_1,
+                              shelter_id: @shelter_1.id)
 
   end
 
