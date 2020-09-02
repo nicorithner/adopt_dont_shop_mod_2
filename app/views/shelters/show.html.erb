@@ -37,7 +37,11 @@
             </nav>
           </div>
           <div class="shelter_stats">
-            <ul>Average Review: <%= @shelter.reviews.average(:rating).round %></ul>
+            <%if @shelter.reviews %> 
+            <ul>Average Review: <%= @shelter.reviews.average(:rating) %></ul>
+            <%else%> 
+            <ul>Average Review: 0</ul>
+            <%end%> 
             <ul>Total Pets: <%= @shelter.pets.count %></ul>
             <ul>Total Pending Applications:<%=@total_pending_applications%></ul>
           </div>
