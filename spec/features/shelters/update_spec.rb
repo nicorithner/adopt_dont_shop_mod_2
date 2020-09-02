@@ -9,19 +9,33 @@ RSpec.describe "Shelter Update" do
   it "From Shelter show page clicking 'Update Shelter' link routes to 'shelters/:id/edit'" do
     visit "/shelters/#{@shelter_1.id}"
     click_on "Update Shelter"
-
+    
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
   end
-
+  
   it "Can update shelter info, click submit, and be redirected to shelter's show page where update is reflected" do
     visit "/shelters/#{@shelter_1.id}/edit"
-
+    
     fill_in :name, with: "Updated Name"
     click_on "Submit Changes"
-
+    
     expect(current_path).to eq("/shelters/#{@shelter_1.id}")
     expect(page).to have_content("Updated Name")
     expect(page).to_not have_content("Shelter 1")
   end
+  
+  it "When updating a new shelter there is a flash message if there are blank fields in the form" do
+    
+    visit "/shelters/#{@shelter_1.id}"
+    click_on "Update Shelter"
+    
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
+
+    fill_in :name, with: nil
+    click_on "Submit Changes"
+    
+    expect(page).to have_content("Incomplete form")
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
+  end 
   
 end

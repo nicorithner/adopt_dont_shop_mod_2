@@ -28,5 +28,17 @@ RSpec.describe "Shelter Creation" do
     expect(page).to have_content("New Shelter")
   end
   
+  it "When creating a new shelter there is a flash message if there are blank fields in the form" do
+    visit '/shelters'
+    click_on "New Shelter"
+    expect(current_path).to eq('/shelters/new')
+
+
+    fill_in 'shelter[name]', with: nil
+    click_on "Create Shelter"
+    
+    expect(current_path).to eq('/shelters/new')
+    expect(page).to have_content("Incomplete form")
+  end 
 end
 

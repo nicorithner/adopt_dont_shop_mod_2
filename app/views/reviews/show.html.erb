@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelters Index</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+   <div class="pets_container">
+      <nav>
+        <a href="/">HOME</a>
+        <a href="/shelters">SHELTERS</a>
+        <a href="/pets">PETS</a>
+      </nav>
+
+      <main>
+        <div class="child">
+
+          <div class="grid-pet-container pet">
+            <div class="info">
+
+              <h1><u><%= @shelter.name %></u></h1><br>
+              <% @shelter.reviews.each do |review| %>
+                <ul><b>Title: </b><%= review.title %></ul>
+                <ul><%= review.content %></ul>
+                <ul> <%= review.optional_picture %></ul>
+                <nav><ul><%= link_to "Edit Review", "/reviews/#{review.id}/edit" %></ul>
+                    <ul><%= link_to "Delete Review", "/reviews/#{review.id}", method: :delete %></ul>
+                </nav>
+                <ul>---------------------------------------------------------------------------</ul>
+                <br>
+                    <% end %>
+
+          </div>
+        </div>
+      </main>
+
+
+
+      <footer>
+          <nav>
+        <a href="#">Home</a>
+        <a href="/shelters">Shelters</a>
+        <a href="/pets">Pets</a>
+      </nav>
+        </footer>
+    </div>
+
+  </body>
+</html>

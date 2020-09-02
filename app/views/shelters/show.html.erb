@@ -9,44 +9,45 @@
   </head>
 
   <body>
-   <div class="main_container">
-      <nav>
-        <a href="/">HOME</a>
-        <a href="/shelters">SHELTERS</a>
-        <a href="/pets">PETS</a>
-      </nav>
-
+    <div class="main_container">
       <main>
         <div class="child">
-          
+
           <div class="grid-pet-container">
             <div class="info">
               <ul><h3><%= @shelter.name %></h3></ul>
               <ul><%= @shelter.address %>, <%= @shelter.city %> </ul>
               <ul><%= @shelter.state %>, <%= @shelter.zip %></ul>
+              <% @shelter.reviews.each do |review| %>
+                <ul> <%= review.title %></ul>
+                <ul> <%= review.content %></ul>
+                <ul> <%= review.optional_picture %></ul>
+              <% end %>
             </div>
 
             <nav class="links">
-            <ul><%= link_to "#{@shelter.name} pets", "/shelters/#{@shelter.id}/pets" %></ul>
-            <ul><a href="/shelters/<%= @shelter.id %>/edit">Update Shelter</a></ul>
-            <ul><%= link_to "Delete", "/shelters/#{@shelter.id}", method: :delete %></ul>
+              <ul><%= link_to "#{@shelter.name} pets", "/shelters/#{@shelter.id}/pets" %></ul>
+              <ul><a href="/shelters/<%= @shelter.id %>/edit">Update Shelter</a></ul>
+              
+              <% if @pending_applications.present? %>
+              <ul><%= link_to "New Review", "/shelters/#{@shelter.id}/reviews/new"%></ul>
+              <% else %>
+              <ul><%= link_to "New Review", "/shelters/#{@shelter.id}/reviews/new"%></ul>
+              <ul><%= link_to "Delete", "/shelters/#{@shelter.id}", method: :delete %></ul>
+              <% end %>
             </nav>
           </div>
-
+          <div class="shelter_stats">
+            <%if @shelter.reviews %> 
+            <ul>Average Review: <%= @shelter.reviews.average(:rating) %></ul>
+            <%else%> 
+            <ul>Average Review: 0</ul>
+            <%end%> 
+            <ul>Total Pets: <%= @shelter.pets.count %></ul>
+            <ul>Total Pending Applications:<%=@total_pending_applications%></ul>
+          </div>
         </div>
-
       </main>
-
-
-
-      <footer>
-          <nav>
-        <a href="#">Home</a>
-        <a href="/shelters">Shelters</a>
-        <a href="/pets">Pets</a>
-      </nav>
-        </footer>
     </div>
-
   </body>
 </html>

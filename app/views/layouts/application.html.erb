@@ -9,7 +9,21 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+  <header>
+    <nav class="topnav">
+      <a href="/">HOME</a>
+      <a href="/shelters">SHELTERS</a>
+      <a href="/pets">PETS</a>
+      <a href="/favorites">Favorite <%=favorites_count%></a>
+
+    </nav>
+  </header>
+  
   <body>
+    <% flash.each do |type, message| %>
+      <p><%= message %></p>
+      <% end %>
+
     <%= yield %>
   </body>
 </html>

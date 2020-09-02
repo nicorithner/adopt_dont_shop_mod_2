@@ -9,16 +9,10 @@
   </head>
 
   <body>
-   <div class="pets_container">
-      <nav>
-        <a href="/">HOME</a>
-        <a href="/shelters">SHELTERS</a>
-        <a href="/pets">PETS</a>
-      </nav>
-
+    <div class="pets_container">
       <main>
         <div class="child">
-          
+
           <div class="grid-pet-container pet">
             <div class="banner-grid_item"></div>
 
@@ -29,29 +23,36 @@
             <div class="info">
               <ul>Age: <%= @pet.age %></ul>
               <ul>Sex: <%= @pet.sex %></ul>
-              <ul>Sex: <%= @pet.description %></ul>
+              <ul>Description: <%= @pet.description %></ul>
               <ul>Shelter: <%= @pet.shelter.name %></ul>
-              <ul>Sex: <%= @pet.status %></ul>
+              <ul>Status: <%= @pet.status %></ul>
+              <% @pet.apps.each do |app| %>
+              <ul>On hold for: <b><%= app.name %></b></ul>
+              <% end %>
+
             </div>
-            
-            <nav class="links">
+
+            <nav class="links" id="links">
               <ul><%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %></ul>
-              <ul><%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %></ul>
+              <% if @pet.application_pending == true %>
+                <ul><%= link_to "View all applications for #{@pet.name}", "/pets/#{@pet.id}/applications" %></ul>
+                <% else %>
+                <ul><%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %></ul>
+                <ul><%= link_to "View all applications for #{@pet.name}", "/pets/#{@pet.id}/applications" %></ul>
+                <% end %>
+
+              <!--Favorite toggle button here-->
+              <% if session_favorites.include?(@pet)%>
+                <%= link_to "Remove Favorite", remove_favorite_favorite_path(@pet.id),  method: :patch %>
+              <%else%>
+                <%= link_to "Favorite", add_favorite_favorite_path(@pet),  method: :patch %>
+              <%end%>
+
             </nav>
 
           </div>
         </div>
       </main>
-
-
-
-      <footer>
-          <nav>
-        <a href="#">Home</a>
-        <a href="/shelters">Shelters</a>
-        <a href="/pets">Pets</a>
-      </nav>
-        </footer>
     </div>
 
   </body>

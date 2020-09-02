@@ -6,7 +6,7 @@ class SheltersController < ApplicationController
   def new
   end
 
-  def create
+  def create #change this?
     shelter = Shelter.new({
       name: params[:shelter][:name],
       address: params[:shelter][:address],
@@ -15,12 +15,18 @@ class SheltersController < ApplicationController
       zip: params[:shelter][:zip]
       })
 
-    shelter.save
-    redirect_to '/shelters'
+    if shelter.save
+      redirect_to '/shelters'
+    else
+      flash[:error] = "Incomplete form."
+      redirect_to request.referrer
+    end
   end
 
   def show
     @shelter = Shelter.find(params[:id])
+    @total_pending_applications = [@shelter.pets.where('application_pending == true')].count
+    @pending_applications = @shelter.pets.where(application_pending: true)
   end
 
   def edit
@@ -29,13 +35,26 @@ class SheltersController < ApplicationController
 
   def update
     shelter = Shelter.find(params[:id])
-    shelter.update(shelter_params)
-    redirect_to("/shelters/#{shelter.id}")
+    if shelter.update(shelter_params)
+      redirect_to("/shelters/#{shelter.id}")
+    else
+      flash[:error] = "Incomplete form."
+      redirect_to request.referrer
+    end
   end
 
   def destroy
-  Shelter.destroy(params[:id])
-  redirect_to '/shelters'
+    reviews = Shelter.find(params[:id]).reviews
+    if reviews.empty?
+      Shelter.destroy(params[:id])
+      redirect_to '/shelters'
+    else
+      reviews.each do |review|
+        Review.destroy(review.id)
+      end
+      Shelter.destroy(params[:id])
+      redirect_to '/shelters'
+    end
   end
 
   def pets_index
@@ -45,8 +64,8 @@ class SheltersController < ApplicationController
   end
 
   private
-  
+
   def shelter_params
-    params.permit(:name, :address, :city, :state, :zip)
+    params.permit(:name, :address, :city, :state, :zip, :reviews)
   end
 end

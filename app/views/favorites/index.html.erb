@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorited Pets Index</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="pets_container">
+      <main>
+        <div class="child">
+          <% if @favorites.empty? %><br>
+            <%="You haven't favorited any pets"%><br/>
+            <br>
+            <h1>Applications pending for:</h1>
+            <% @pets.each do |pet| %>
+              <p><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p>
+              <br>
+              <% end %>
+              <br>
+          <% else %>
+            <div class="grid-pet-container pet">
+              <div class="banner-grid_item"></div>
+                <% @favorites.each do |pet| %>
+                  <div id= <%= "pet-#{pet["id"]}" %>>
+                    <%= image_tag(pet["image"], alt: pet["name"], class: "pet-index-image") %>
+                    <nav class="name"> <h1><a href="/pets/<%= pet["id"] %>"><%= pet["name"] %></a></h1></nav>
+                    <ul><%= link_to "Remove Favorite", remove_favorite_favorite_path(pet["id"]),  method: :patch %></ul>
+                    <nav><ul><%= link_to "Adopt Pets", "/pets/#{pet["id"]}/adopt" %></ul></nav>
+                  </div>
+                <%end%>
+                <h1>Applications pending for:</h1>
+                <%pets_pending = @pets.select do |pet| %>
+                <% pet.application_pending == true %>
+                <% end %>
+                <% pets_pending.each do |pet| %>
+                <%= link_to "#{pet.name}", "/pets/#{pet.id}" %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <%= link_to "Remove All Favorites", "/favorites", method: :delete %>
+      </main>
+    </div>
+  </body>
+</html>

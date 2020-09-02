@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelters Index</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="pets_container">
+      <main>
+        <div class="child">
+          <h1>Add A New Review for <%= "#{@shelter.name}" %></h1>
+
+          <div class="form-container">
+
+            <%= form_tag "/shelters/#{@shelter_id}/reviews" do %>
+              <%= label_tag :title %><br/>
+              <%= text_field_tag :title, nil, :maxlength => 25, :size => 20 %><br/>
+              <%= label_tag :rating %> (1 through 5)<br/>
+              <%= number_field_tag 'rating', nil, max: 5 %><br/>
+              <%= label_tag :content %> <br/>
+              <%= text_area_tag :content %> <br/>
+              <%= label_tag :optional_picture %> <br/>
+              <%= text_field_tag :optional_picture %><br/>
+              <br>
+              <%= submit_tag "Submit Review" %>
+            <% end %>
+
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
