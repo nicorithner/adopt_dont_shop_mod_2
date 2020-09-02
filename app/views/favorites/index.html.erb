@@ -36,7 +36,7 @@
                 <% pet.application_pending == true %>
                 <% end %>
                 <% pets_pending.each do |pet| %>
-                <%= pet.name %>
+                <%= link_to "#{pet.name}", "/pets/#{pet.id}" %>
                 <% end %>
               </div>
             </div>
